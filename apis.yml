@@ -1,27 +1,39 @@
 aid: climatiq
-name: Climatiq
-description: 'The largest database of vetted emission factors. Open to all. '
-type: Index
-position: Consumer
-access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: '2025-02-24'
-modified: '2025-02-24'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/climatiq/refs/heads/main/apis.yml
-specificationVersion: '0.19'
 apis:
   - aid: climatiq:climatiq
     name: Climatiq
-    description: 'The largest database of vetted emission factors. Open to all. '
-    humanURL: ' https://www.climatiq.io/data'
     tags:
       - API
+    humanURL: ' https://www.climatiq.io/data'
     properties:
-      - type: Documentation
-        url: ' https://www.climatiq.io/data'
+      - url: ' https://www.climatiq.io/data'
+        type: Documentation
+    description: 'The largest database of vetted emission factors. Open to all. '
+name: Climatiq
+tags:
+  - Environment
+  - Data
+  - Energy
+  - Waste
+  - Carbon Emissions
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2025-02-24'
+modified: '2025-02-27'
+position: Consumer
+description: >-
+  Climatiq is a data analytics company that specializes in providing businesses
+  with insights into their environmental impact. By collecting and analyzing
+  data related to energy consumption, waste production, and carbon emissions,
+  Climatiq helps companies identify opportunities to reduce their environmental
+  footprint and make more sustainable choices. Through the use of cutting-edge
+  technology and innovative solutions, Climatiq empowers organizations to take
+  actionable steps towards a greener future while also improving their bottom
+  line.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
