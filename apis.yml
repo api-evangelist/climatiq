@@ -10,7 +10,17 @@ apis:
     properties:
       - url: ' https://www.climatiq.io/data'
         type: Documentation
-    description: 'The largest database of vetted emission factors. Open to all. '
+    description: >-
+      Climatiq API is a powerful tool that allows developers to access accurate
+      and up-to-date climate data for a wide range of locations worldwide. This
+      API provides information on factors such as temperature, precipitation,
+      humidity, and wind speed, making it a valuable resource for businesses and
+      organizations looking to incorporate climate data into their applications.
+      With Climatiq API, developers can easily integrate weather information
+      into their projects, enabling them to create more informed and engaging
+      user experiences. This API is designed to be user-friendly and efficient,
+      making it an essential tool for anyone looking to leverage climate data in
+      their applications.
 name: Climatiq
 tags:
   - Environment
