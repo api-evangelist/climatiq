@@ -21,6 +21,16 @@ apis:
       user experiences. This API is designed to be user-friendly and efficient,
       making it an essential tool for anyone looking to leverage climate data in
       their applications.
+  - aid: climatiq:automated-carbon-emission-calculations-api
+    name: Automated Carbon Emission Calculations API
+    description: >-
+      GET Allows you to determine what emission factors are available to be used
+      in your estimates.
+    humanURL: https://www.climatiq.io/docs/api-reference/search
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/search
 name: Climatiq
 tags:
   - Environment
@@ -31,6 +41,57 @@ tags:
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
+common:
+  - url: https://www.climatiq.io/
+    name: Climatiq - API for Carbon Footprint Calculations
+    type: Website
+    description: 'null'
+  - url: https://www.climatiq.io/pricing
+    name: Pricing and Plans | Climatiq API
+    type: Pricing
+    description: 'null'
+  - url: https://www.climatiq.io/blog
+    name: Climatiq Blog
+    type: Blog
+    description: 'null'
+  - url: https://trust.climatiq.io/
+    name: Trust Center - Climatiq
+    type: Trust
+    description: 'null'
+  - url: https://www.climatiq.io/support
+    name: Support
+    type: Support
+    description: 'null'
+  - url: https://www.climatiq.io/customers
+    name: Customer Stories | Climatiq
+    type: Customers
+    description: 'null'
+  - url: https://auth.climatiq.io/login
+    name: Sign In with Climatiq
+    type: Login
+    description: 'null'
+  - url: https://www.climatiq.io/demo
+    name: API Demo - Climatiq
+    type: Playground
+    description: 'null'
+  - url: https://www.climatiq.io/partner-with-climatiq
+    name: Partner with Climatiq
+    type: Partners
+    description: 'null'
+  - url: https://www.climatiq.io/newsletter
+    name: Subscribe to our Newsletter
+    type: Newsletter
+    description: 'null'
+  - name: >-
+      Quickstart - Climatiq How-To Guides - Automated Carbon Emission
+      Calculations
+    description: 'null'
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+    type: GettingStarted
+  - name: API Versions - Automated Carbon Emission Calculations
+    description: 'null'
+    url: https://www.climatiq.io/docs/changelogs/api-release
+    type: Versioning
 created: '2025-02-24'
 modified: '2025-02-27'
 position: Consumer
@@ -47,44 +108,3 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
-common:
-  - name: Climatiq - API for Carbon Footprint Calculations
-    description: 'null'
-    url: https://www.climatiq.io/
-    type: Website
-  - name: Pricing and Plans | Climatiq API
-    description: 'null'
-    url: https://www.climatiq.io/pricing
-    type: Pricing
-  - name: Climatiq Blog
-    description: 'null'
-    url: https://www.climatiq.io/blog
-    type: Blog
-  - name: Trust Center - Climatiq
-    description: 'null'
-    url: https://trust.climatiq.io/
-    type: Trust
-  - name: Support
-    description: 'null'
-    url: https://www.climatiq.io/support
-    type: Support
-  - name: Customer Stories | Climatiq
-    description: 'null'
-    url: https://www.climatiq.io/customers
-    type: Customers
-  - name: Sign In with Climatiq
-    description: 'null'
-    url: https://auth.climatiq.io/login
-    type: Login
-  - name: API Demo - Climatiq
-    description: 'null'
-    url: https://www.climatiq.io/demo
-    type: Playground
-  - name: Partner with Climatiq
-    description: 'null'
-    url: https://www.climatiq.io/partner-with-climatiq
-    type: Partners
-  - name: Subscribe to our Newsletter
-    description: 'null'
-    url: https://www.climatiq.io/newsletter
-    type: Newsletter
