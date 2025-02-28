@@ -2,27 +2,8 @@ aid: climatiq
 url: >-
   https://raw.githubusercontent.com/api-evangelist/climatiq/refs/heads/main/apis.yml
 apis:
-  - aid: climatiq:climatiq
-    name: Climatiq API
-    tags:
-      - API
-    humanURL: ' https://www.climatiq.io/data'
-    properties:
-      - url: ' https://www.climatiq.io/data'
-        type: Documentation
-    description: >-
-      Climatiq API is a powerful tool that allows developers to access accurate
-      and up-to-date climate data for a wide range of locations worldwide. This
-      API provides information on factors such as temperature, precipitation,
-      humidity, and wind speed, making it a valuable resource for businesses and
-      organizations looking to incorporate climate data into their applications.
-      With Climatiq API, developers can easily integrate weather information
-      into their projects, enabling them to create more informed and engaging
-      user experiences. This API is designed to be user-friendly and efficient,
-      making it an essential tool for anyone looking to leverage climate data in
-      their applications.
-  - aid: climatiq:automated-carbon-emission-calculations-api
-    name: Automated Carbon Emission Calculations API
+  - aid: climatiq:search-api
+    name: Search API
     description: >-
       GET Allows you to determine what emission factors are available to be used
       in your estimates.
@@ -31,6 +12,32 @@ apis:
     properties:
       - type: Documentation
         url: https://www.climatiq.io/docs/api-reference/search
+  - aid: climatiq:intermodal-freight-v2-api
+    name: Intermodal Freight v2 API
+    description: >-
+      Climatiq allows you to use emission factors from the Global Logistics
+      Emissions Council(GLEC)(opens in a new tab) to calculate the carbon
+      emissions for shipping freight around the world using multiple modes of
+      transport such as by sea, air, road or rail.
+    humanURL: https://www.climatiq.io/docs/api-reference/intermodal-freight
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - aid: climatiq:travel-api
+    name: Travel API
+    description: >-
+      Climatiq provides a comprehensive toolkit to help businesses measure GHG
+      emissions from travel activities. This includes reporting scope 3.6
+      emissions under the GHG Protocol for travel activities in vehicles owned
+      or operated by third parties, such as aircraft, trains and passenger cars.
+      Emissions associated with hotel stays can also be calculated, providing a
+      comprehensive view of travel-related emissions.
+    humanURL: https://www.climatiq.io/docs/api-reference/travel
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/travel
 name: Climatiq
 tags:
   - Environment
