@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/climatiq/refs/heads/main/apis.yml
 apis:
   - aid: climatiq:climatiq
-    name: Climatiq
+    name: Climatiq API
     tags:
       - API
     humanURL: ' https://www.climatiq.io/data'
