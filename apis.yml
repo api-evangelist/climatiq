@@ -4,28 +4,33 @@ url: >-
 apis:
   - aid: climatiq:search-api
     name: Search API
+    tags: []
+    humanURL: https://www.climatiq.io/docs/api-reference/search
+    properties:
+      - url: https://www.climatiq.io/docs/api-reference/search
+        type: Documentation
     description: >-
       GET Allows you to determine what emission factors are available to be used
       in your estimates.
-    humanURL: https://www.climatiq.io/docs/api-reference/search
-    tags: []
-    properties:
-      - type: Documentation
-        url: https://www.climatiq.io/docs/api-reference/search
   - aid: climatiq:intermodal-freight-v2-api
     name: Intermodal Freight v2 API
+    tags: []
+    humanURL: https://www.climatiq.io/docs/api-reference/intermodal-freight
+    properties:
+      - url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+        type: Documentation
     description: >-
       Climatiq allows you to use emission factors from the Global Logistics
       Emissions Council(GLEC)(opens in a new tab) to calculate the carbon
       emissions for shipping freight around the world using multiple modes of
       transport such as by sea, air, road or rail.
-    humanURL: https://www.climatiq.io/docs/api-reference/intermodal-freight
-    tags: []
-    properties:
-      - type: Documentation
-        url: https://www.climatiq.io/docs/api-reference/intermodal-freight
   - aid: climatiq:travel-api
     name: Travel API
+    tags: []
+    humanURL: https://www.climatiq.io/docs/api-reference/travel
+    properties:
+      - url: https://www.climatiq.io/docs/api-reference/travel
+        type: Documentation
     description: >-
       Climatiq provides a comprehensive toolkit to help businesses measure GHG
       emissions from travel activities. This includes reporting scope 3.6
@@ -33,11 +38,107 @@ apis:
       or operated by third parties, such as aircraft, trains and passenger cars.
       Emissions associated with hotel stays can also be calculated, providing a
       comprehensive view of travel-related emissions.
-    humanURL: https://www.climatiq.io/docs/api-reference/travel
+  - aid: climatiq:classifications-api
+    name: Classifications API
+    description: >-
+      Many sources link emission factors(opens in a new tab) to specific
+      industry classification schemes, and Climatiq makes it possible to select
+      an emission factor based on these industry classification codes. Please
+      see below the list of mappings we currently support, with the datasets
+      that are mapped directly to them (note that the API will also map factors
+      indirectly via the UN correspondence tables(opens in a new tab)):
+    humanURL: https://www.climatiq.io/docs/api-reference/classifications
     tags: []
     properties:
       - type: Documentation
-        url: https://www.climatiq.io/docs/api-reference/travel
+        url: https://www.climatiq.io/docs/api-reference/classifications
+  - aid: climatiq:energy-v1-api
+    name: Energy v1 API
+    description: >-
+      The energy endpoints automatically calculates the greenhouse gas emissions
+      associated with the consumed energy based on relevant emission factors.
+      These factors are determined based on the specific type of energy and the
+      region where it is consumed, ensuring accurate carbon footprint
+      calculations for your organization.
+    humanURL: https://www.climatiq.io/docs/api-reference/energy
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/energy
+  - aid: climatiq:autopilot-api
+    name: Autopilot API
+    description: >-
+      Autopilot is an AI-powered calculation endpoint designed to automate
+      spend- and activity-based emission estimates. It uses a proprietary
+      natural language processing (NLP) model paired with Climatiqs scientific
+      expertise to streamline complex emission calculations, making carbon
+      insights accessible to non-experts.
+    humanURL: https://www.climatiq.io/docs/api-reference/autopilot
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/autopilot
+  - aid: climatiq:estimation-api
+    name: Estimation API
+    description: >-
+      Estimation operations are performed to calculate emissions produced by one
+      or more activities, based on multiplying activity data by the appropriate
+      emission factors.
+    humanURL: https://www.climatiq.io/docs/api-reference/estimate
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/estimate
+  - aid: climatiq:cloud-computing-api
+    name: Cloud Computing API
+    description: >-
+      Climatiq makes endpoints available to help you calculate the carbon
+      footprint of the cloud resources you use. It will automatically select
+      emission factors based on your cloud provider and region, so you get the
+      right emission factor for your datacenter.
+    humanURL: https://www.climatiq.io/docs/api-reference/computing
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/computing
+  - aid: climatiq:procurement-api
+    name: Procurement API
+    description: >-
+      Spend-based estimations enable carbon footprint calculations for purchased
+      goods and services (GHG Protocol Category 3.1) using expenditure data.
+      They are especially valuable when precise activity data is not readily
+      available.
+    humanURL: https://www.climatiq.io/docs/api-reference/procurement
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/procurement
+  - aid: climatiq:custom-mappings-api
+    name: Custom Mappings API
+    description: >-
+      Instead of using code to specify emission factors you want to use for your
+      calculations, you can map your own labels to Climatiq activity IDs in the
+      Climatiq dashboard(opens in a new tab), allowing the Climatiq API to
+      recognize whatever values you use to categorize your activities. In the
+      dashboard simply link a custom mapping label to an activity ID, and this
+      can then be used in the custom mapping endpoints.
+    humanURL: https://www.climatiq.io/docs/api-reference/custom-mappings
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - aid: climatiq:carbon-border-adjustment-mechanism-api
+    name: Carbon Border Adjustment Mechanism API
+    description: >-
+      The Carbon Border Adjustment Mechanism (CBAM)(opens in a new tab) has been
+      introduced by the European Union (EU) to promote lower carbon production
+      in countries outside of the EU. It places requirements on importers of
+      certain goods (currently Iron 
+    humanURL: https://www.climatiq.io/docs/api-reference/cbam
+    tags: []
+    properties:
+      - type: Documentation
+        url: https://www.climatiq.io/docs/api-reference/cbam
 name: Climatiq
 tags:
   - Environment
@@ -89,16 +190,16 @@ common:
     name: Subscribe to our Newsletter
     type: Newsletter
     description: 'null'
-  - name: >-
+  - url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+    name: >-
       Quickstart - Climatiq How-To Guides - Automated Carbon Emission
       Calculations
-    description: 'null'
-    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
     type: GettingStarted
-  - name: API Versions - Automated Carbon Emission Calculations
     description: 'null'
-    url: https://www.climatiq.io/docs/changelogs/api-release
+  - url: https://www.climatiq.io/docs/changelogs/api-release
+    name: API Versions - Automated Carbon Emission Calculations
     type: Versioning
+    description: 'null'
 created: '2025-02-24'
 modified: '2025-02-27'
 position: Consumer
