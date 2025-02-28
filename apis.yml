@@ -47,3 +47,44 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
+common:
+  - name: Climatiq - API for Carbon Footprint Calculations
+    description: 'null'
+    url: https://www.climatiq.io/
+    type: Website
+  - name: Pricing and Plans | Climatiq API
+    description: 'null'
+    url: https://www.climatiq.io/pricing
+    type: Pricing
+  - name: Climatiq Blog
+    description: 'null'
+    url: https://www.climatiq.io/blog
+    type: Blog
+  - name: Trust Center - Climatiq
+    description: 'null'
+    url: https://trust.climatiq.io/
+    type: Trust
+  - name: Support
+    description: 'null'
+    url: https://www.climatiq.io/support
+    type: Support
+  - name: Customer Stories | Climatiq
+    description: 'null'
+    url: https://www.climatiq.io/customers
+    type: Customers
+  - name: Sign In with Climatiq
+    description: 'null'
+    url: https://auth.climatiq.io/login
+    type: Login
+  - name: API Demo - Climatiq
+    description: 'null'
+    url: https://www.climatiq.io/demo
+    type: Playground
+  - name: Partner with Climatiq
+    description: 'null'
+    url: https://www.climatiq.io/partner-with-climatiq
+    type: Partners
+  - name: Subscribe to our Newsletter
+    description: 'null'
+    url: https://www.climatiq.io/newsletter
+    type: Newsletter
