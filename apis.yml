@@ -201,7 +201,7 @@ common:
     type: Versioning
     description: 'null'
 created: '2025-02-24'
-modified: '2025-02-27'
+modified: '2026-03-16'
 position: Consumer
 description: >-
   Climatiq is a data analytics company that specializes in providing businesses
@@ -214,5 +214,5 @@ description: >-
   line.
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
