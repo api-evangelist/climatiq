@@ -141,11 +141,11 @@ apis:
       certain goods (currently Iron 
 name: Climatiq
 tags:
-  - Environment
+  - Carbon Emissions
   - Data
   - Energy
+  - Environment
   - Waste
-  - Carbon Emissions
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
