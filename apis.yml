@@ -13,7 +13,7 @@ apis:
       GET Allows you to determine what emission factors are available to be used
       in your estimates.
   - aid: climatiq:intermodal-freight-v2-api
-    name: Climatiq Intermodal Freight v2 API
+    name: Climatiq Intermodal Freight V2 API
     tags: []
     humanURL: https://www.climatiq.io/docs/api-reference/intermodal-freight
     properties:
@@ -53,7 +53,7 @@ apis:
       that are mapped directly to them (note that the API will also map factors
       indirectly via the UN correspondence tables(opens in a new tab)):
   - aid: climatiq:energy-v1-api
-    name: Climatiq Energy v1 API
+    name: Climatiq Energy V1 API
     tags: []
     humanURL: https://www.climatiq.io/docs/api-reference/energy
     properties:
@@ -75,7 +75,7 @@ apis:
     description: >-
       Autopilot is an AI-powered calculation endpoint designed to automate
       spend- and activity-based emission estimates. It uses a proprietary
-      natural language processing (NLP) model paired with Climatiqs scientific
+      natural language processing (NLP) model paired with Climatiqs scientific
       expertise to streamline complex emission calculations, making carbon
       insights accessible to non-experts.
   - aid: climatiq:estimation-api
