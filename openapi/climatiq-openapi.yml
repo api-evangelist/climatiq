@@ -1,0 +1,410 @@
+openapi: 3.1.0
+info:
+  title: Climatiq API
+  version: '3'
+  description: >-
+    Climatiq is a carbon emissions calculation API that gives developers
+    programmatic access to a curated database of emission factors and to
+    purpose-built calculation endpoints. The API exposes search over the
+    factor catalog and a family of estimation endpoints for activity-based
+    and spend-based calculations across travel, freight, energy, cloud
+    computing, procurement, and CBAM workflows. Authentication uses an API
+    key sent as a Bearer token in the Authorization header. Responses are
+    JSON with deterministic emission outputs in CO2e (kg) plus the underlying
+    factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+  - url: https://api.climatiq.io
+    description: Climatiq Production API
+security:
+  - bearerAuth: []
+tags:
+  - name: Search
+    description: Discover emission factors in the Climatiq dataset.
+  - name: Estimate
+    description: Activity-based emission estimation.
+  - name: Travel
+    description: Emissions from passenger travel and accommodation.
+  - name: Freight
+    description: Multi-modal freight emissions using GLEC factors.
+  - name: Energy
+    description: Emissions from electricity, heat, and fuel consumption.
+  - name: Computing
+    description: Cloud computing carbon footprint.
+  - name: Procurement
+    description: Spend-based emissions for purchased goods and services.
+  - name: Autopilot
+    description: AI-driven automated emissions calculation.
+  - name: Classifications
+    description: Industry classification mappings for emission factors.
+  - name: CBAM
+    description: EU Carbon Border Adjustment Mechanism reporting.
+  - name: Reference
+    description: Reference data such as regions and unit types.
+paths:
+  /data/v1/search:
+    get:
+      operationId: searchEmissionFactors
+      summary: Search emission factors
+      description: >-
+        Returns a paginated list of emission factors matching the given
+        query, region, year, source, sector, and other filter parameters.
+        Used to discover the activity_id needed for estimation calls.
+      tags:
+        - Search
+      parameters:
+        - name: query
+          in: query
+          schema:
+            type: string
+        - name: data_version
+          in: query
+          schema:
+            type: string
+        - name: region
+          in: query
+          schema:
+            type: string
+        - name: year
+          in: query
+          schema:
+            type: integer
+        - name: source
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: results_per_page
+          in: query
+          schema:
+            type: integer
+            default: 10
+            maximum: 500
+      responses:
+        '200':
+          description: Matching emission factors.
+  /data/v1/estimate:
+    post:
+      operationId: estimateEmissions
+      summary: Estimate emissions for an activity
+      description: >-
+        Calculates CO2e emissions by combining a selected emission factor
+        (via activity_id or emission_factor object) with caller-supplied
+        activity parameters such as energy used, distance, money spent, or
+        weight moved.
+      tags:
+        - Estimate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EstimationRequest'
+      responses:
+        '200':
+          description: Calculated emission estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EstimationResponse'
+  /travel/v1/car:
+    post:
+      operationId: estimateTravelCar
+      summary: Estimate car travel emissions
+      description: Calculates emissions for passenger car travel based on distance and vehicle parameters.
+      tags:
+        - Travel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Car travel emissions.
+  /travel/v1/flight:
+    post:
+      operationId: estimateTravelFlight
+      summary: Estimate flight emissions
+      description: Calculates passenger flight emissions for one or more legs using IATA airport codes and class of travel.
+      tags:
+        - Travel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Flight emissions estimate.
+  /travel/v1/hotel:
+    post:
+      operationId: estimateTravelHotel
+      summary: Estimate hotel stay emissions
+      description: Calculates emissions associated with hotel accommodation by country, number of nights, and number of rooms.
+      tags:
+        - Travel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Hotel stay emissions.
+  /freight/v3/intermodal:
+    post:
+      operationId: estimateFreightIntermodal
+      summary: Estimate intermodal freight emissions
+      description: Calculates well-to-wheel freight emissions across multi-leg journeys using GLEC factors for sea, air, road, and rail.
+      tags:
+        - Freight
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Freight emissions per leg and total.
+  /energy/v1/electricity:
+    post:
+      operationId: estimateElectricity
+      summary: Estimate electricity emissions
+      description: Calculates Scope 2 electricity emissions for a given region and amount of energy consumed, with optional location-based and market-based methods.
+      tags:
+        - Energy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Electricity emission estimate.
+  /energy/v1/heat-and-steam:
+    post:
+      operationId: estimateHeatSteam
+      summary: Estimate heat and steam emissions
+      description: Calculates emissions from purchased heat or steam using region-appropriate factors.
+      tags:
+        - Energy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Heat and steam emission estimate.
+  /energy/v1/fuel:
+    post:
+      operationId: estimateFuel
+      summary: Estimate fuel combustion emissions
+      description: Calculates Scope 1 emissions for combustion of liquid, gaseous, and solid fuels.
+      tags:
+        - Energy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Fuel emission estimate.
+  /compute/v1/cpu:
+    post:
+      operationId: estimateCloudCpu
+      summary: Estimate cloud CPU emissions
+      description: Calculates the CO2e of CPU usage on a cloud provider, automatically selecting region-specific grid factors.
+      tags:
+        - Computing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cloud CPU emission estimate.
+  /compute/v1/memory:
+    post:
+      operationId: estimateCloudMemory
+      summary: Estimate cloud memory emissions
+      description: Calculates emissions from RAM usage on a cloud provider in a specified region.
+      tags:
+        - Computing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cloud memory emission estimate.
+  /compute/v1/storage:
+    post:
+      operationId: estimateCloudStorage
+      summary: Estimate cloud storage emissions
+      description: Calculates emissions from object or block storage on a cloud provider in a specified region.
+      tags:
+        - Computing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cloud storage emission estimate.
+  /procurement/v1/spend:
+    post:
+      operationId: estimateProcurementSpend
+      summary: Estimate spend-based procurement emissions
+      description: Calculates Scope 3.1 emissions from purchased goods and services using expenditure data and EEIO factors.
+      tags:
+        - Procurement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Procurement spend emission estimate.
+  /autopilot/v1:
+    post:
+      operationId: autopilotEstimate
+      summary: Calculate emissions automatically with Autopilot
+      description: Uses Climatiq's NLP model to interpret a free-text description and automatically select an emission factor and method.
+      tags:
+        - Autopilot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Autopilot emission estimate.
+  /classifications/v2:
+    get:
+      operationId: listClassifications
+      summary: List supported industry classifications
+      description: Returns the list of supported industry-classification systems and how they map to Climatiq emission factors.
+      tags:
+        - Classifications
+      responses:
+        '200':
+          description: Available classification systems.
+  /cbam/v1:
+    post:
+      operationId: estimateCbam
+      summary: Estimate CBAM embedded emissions
+      description: Calculates embedded emissions for goods covered by the EU Carbon Border Adjustment Mechanism.
+      tags:
+        - CBAM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: CBAM emission estimate.
+  /data/v1/regions:
+    get:
+      operationId: listRegions
+      summary: List supported regions
+      description: Returns the geographic regions Climatiq supports for region-specific emission factors.
+      tags:
+        - Reference
+      responses:
+        '200':
+          description: Supported regions.
+  /data/v1/unit-types:
+    get:
+      operationId: listUnitTypes
+      summary: List supported unit types
+      description: Returns the unit types accepted by estimation endpoints (energy, distance, weight, money, etc.).
+      tags:
+        - Reference
+      responses:
+        '200':
+          description: Supported unit types.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
+  schemas:
+    EstimationRequest:
+      type: object
+      required:
+        - emission_factor
+        - parameters
+      properties:
+        emission_factor:
+          type: object
+          properties:
+            activity_id:
+              type: string
+            data_version:
+              type: string
+            region:
+              type: string
+            year:
+              type: integer
+            source:
+              type: string
+        parameters:
+          type: object
+          additionalProperties: true
+    EstimationResponse:
+      type: object
+      properties:
+        co2e:
+          type: number
+        co2e_unit:
+          type: string
+          example: kg
+        co2e_calculation_method:
+          type: string
+        co2e_calculation_origin:
+          type: string
+        emission_factor:
+          type: object
+        constituent_gases:
+          type: object
+          properties:
+            co2:
+              type: number
+            ch4:
+              type: number
+            n2o:
+              type: number
+        activity_data:
+          type: object

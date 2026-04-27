@@ -1,0 +1,43 @@
+extends:
+  - spectral:oas
+rules:
+  climatiq-info-contact:
+    description: API info MUST contain a contact email or URL.
+    severity: warn
+    given: $.info
+    then:
+      field: contact
+      function: truthy
+  climatiq-https-only:
+    description: All Climatiq API servers MUST use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://'
+  climatiq-operation-id:
+    description: Operations MUST have an operationId.
+    severity: error
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: operationId
+      function: truthy
+  climatiq-tag-required:
+    description: Operations MUST be tagged for product-domain grouping (Search, Estimate, Travel, Freight, Energy, Computing, Procurement, Autopilot, Classifications, CBAM).
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch].tags
+    then:
+      function: truthy
+  climatiq-bearer-auth-required:
+    description: API MUST define a bearer-token security scheme since Climatiq authenticates with API keys passed as Bearer tokens.
+    severity: error
+    given: $.components.securitySchemes
+    then:
+      function: truthy
+  climatiq-server-url:
+    description: API MUST declare at least one server URL (api.climatiq.io).
+    severity: error
+    given: $.servers
+    then:
+      function: truthy

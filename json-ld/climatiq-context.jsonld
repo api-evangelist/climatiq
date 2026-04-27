@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "climatiq": "https://www.climatiq.io/schemas/",
+    "schema": "https://schema.org/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "EmissionFactor": {
+      "@id": "climatiq:EmissionFactor"
+    },
+    "EmissionEstimate": {
+      "@id": "climatiq:EmissionEstimate",
+      "@type": "schema:QuantitativeValue"
+    },
+    "Activity": {
+      "@id": "climatiq:Activity",
+      "@type": "schema:Action"
+    },
+
+    "activity_id": "climatiq:activityId",
+    "name": "schema:name",
+    "category": "climatiq:category",
+    "sector": "climatiq:sector",
+    "source": "climatiq:source",
+    "year": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:gYear"
+    },
+    "region": "schema:areaServed",
+    "data_version": "climatiq:dataVersion",
+
+    "co2e": {
+      "@id": "climatiq:co2e",
+      "@type": "xsd:decimal"
+    },
+    "co2e_unit": {
+      "@id": "qudt:unit"
+    },
+    "co2e_calculation_method": "climatiq:method",
+    "constituent_gases": "climatiq:constituentGases"
+  }
+}

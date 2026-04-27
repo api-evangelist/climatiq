@@ -1,0 +1,71 @@
+capabilities:
+  - id: climatiq.search-emission-factors
+    name: Search the emission-factor catalog
+    description: >-
+      Browse and filter the Climatiq emission-factor database by query
+      text, region, year, source, sector, and category to discover the
+      activity_id needed to drive estimation calls.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.estimate-activity-emissions
+    name: Estimate activity-based emissions
+    description: >-
+      Calculate CO2-equivalent emissions for an arbitrary activity by
+      combining a chosen emission factor with activity parameters such
+      as energy used, distance travelled, weight moved, or money spent.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.calculate-travel-emissions
+    name: Calculate travel emissions
+    description: >-
+      Quantify Scope 3.6 travel emissions for cars, flights, and hotel
+      stays using methodology aligned with the GHG Protocol.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.calculate-freight-emissions
+    name: Calculate intermodal freight emissions
+    description: >-
+      Use Global Logistics Emissions Council (GLEC) factors to compute
+      well-to-wheel emissions for multi-leg freight journeys across
+      sea, air, road, and rail.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.calculate-energy-emissions
+    name: Calculate energy emissions
+    description: >-
+      Compute Scope 1 and Scope 2 emissions from electricity, purchased
+      heat and steam, and direct fuel combustion using region-specific
+      grid factors and methodologies.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.calculate-cloud-emissions
+    name: Calculate cloud computing emissions
+    description: >-
+      Estimate the carbon footprint of CPU, memory, and storage usage
+      across cloud providers and regions using Climatiq's compute
+      endpoints.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.calculate-procurement-emissions
+    name: Calculate spend-based procurement emissions
+    description: >-
+      Use environmentally-extended input-output (EEIO) factors to
+      estimate Scope 3.1 emissions for purchased goods and services
+      from expenditure data.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.run-autopilot-estimate
+    name: Run AI-powered Autopilot estimation
+    description: >-
+      Provide a free-text description and let Climatiq's NLP-driven
+      Autopilot select the appropriate factor and methodology to
+      automate emission estimates for non-experts.
+    apis:
+      - climatiq:climatiq-api
+  - id: climatiq.report-cbam-emissions
+    name: Report CBAM embedded emissions
+    description: >-
+      Compute embedded emissions for goods covered by the EU Carbon
+      Border Adjustment Mechanism for compliance reporting by importers.
+    apis:
+      - climatiq:climatiq-api
