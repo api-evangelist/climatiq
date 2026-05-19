@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Climatiq API — Autopilot
+  description: 'Climatiq API — Autopilot. 1 operations. Lead operation: Calculate emissions automatically with Autopilot.
+    Self-contained Naftiko capability covering one Climatiq business surface.'
+  tags:
+  - Climatiq
+  - Autopilot
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CLIMATIQ_API_KEY: CLIMATIQ_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: climatiq-autopilot
+    baseUri: https://api.climatiq.io
+    description: Climatiq API — Autopilot business capability. Self-contained, no shared references.
+    resources:
+    - name: autopilot-v1
+      path: /autopilot/v1
+      operations:
+      - name: autopilotestimate
+        method: POST
+        description: Calculate emissions automatically with Autopilot
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.CLIMATIQ_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: climatiq-autopilot-rest
+    port: 8080
+    description: REST adapter for Climatiq API — Autopilot. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/autopilot/v1
+      name: autopilot-v1
+      description: REST surface for autopilot-v1.
+      operations:
+      - method: POST
+        name: autopilotestimate
+        description: Calculate emissions automatically with Autopilot
+        call: climatiq-autopilot.autopilotestimate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: climatiq-autopilot-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Climatiq API — Autopilot. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: calculate-emissions-automatically-autopilot
+      description: Calculate emissions automatically with Autopilot
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: climatiq-autopilot.autopilotestimate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Climatiq API — Classifications
+  description: 'Climatiq API — Classifications. 1 operations. Lead operation: List supported industry classifications. Self-contained
+    Naftiko capability covering one Climatiq business surface.'
+  tags:
+  - Climatiq
+  - Classifications
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CLIMATIQ_API_KEY: CLIMATIQ_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: climatiq-classifications
+    baseUri: https://api.climatiq.io
+    description: Climatiq API — Classifications business capability. Self-contained, no shared references.
+    resources:
+    - name: classifications-v2
+      path: /classifications/v2
+      operations:
+      - name: listclassifications
+        method: GET
+        description: List supported industry classifications
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.CLIMATIQ_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: climatiq-classifications-rest
+    port: 8080
+    description: REST adapter for Climatiq API — Classifications. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/classifications/v2
+      name: classifications-v2
+      description: REST surface for classifications-v2.
+      operations:
+      - method: GET
+        name: listclassifications
+        description: List supported industry classifications
+        call: climatiq-classifications.listclassifications
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: climatiq-classifications-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Climatiq API — Classifications. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-supported-industry-classifications
+      description: List supported industry classifications
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: climatiq-classifications.listclassifications
+      outputParameters:
+      - type: object
+        mapping: $.

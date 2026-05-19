@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Climatiq API — Freight
+  description: 'Climatiq API — Freight. 1 operations. Lead operation: Estimate intermodal freight emissions. Self-contained
+    Naftiko capability covering one Climatiq business surface.'
+  tags:
+  - Climatiq
+  - Freight
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CLIMATIQ_API_KEY: CLIMATIQ_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: climatiq-freight
+    baseUri: https://api.climatiq.io
+    description: Climatiq API — Freight business capability. Self-contained, no shared references.
+    resources:
+    - name: freight-v3-intermodal
+      path: /freight/v3/intermodal
+      operations:
+      - name: estimatefreightintermodal
+        method: POST
+        description: Estimate intermodal freight emissions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.CLIMATIQ_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: climatiq-freight-rest
+    port: 8080
+    description: REST adapter for Climatiq API — Freight. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/freight/v3/intermodal
+      name: freight-v3-intermodal
+      description: REST surface for freight-v3-intermodal.
+      operations:
+      - method: POST
+        name: estimatefreightintermodal
+        description: Estimate intermodal freight emissions
+        call: climatiq-freight.estimatefreightintermodal
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: climatiq-freight-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Climatiq API — Freight. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: estimate-intermodal-freight-emissions
+      description: Estimate intermodal freight emissions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: climatiq-freight.estimatefreightintermodal
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

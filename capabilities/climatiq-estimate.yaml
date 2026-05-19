@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Climatiq API — Estimate
+  description: 'Climatiq API — Estimate. 1 operations. Lead operation: Estimate emissions for an activity. Self-contained
+    Naftiko capability covering one Climatiq business surface.'
+  tags:
+  - Climatiq
+  - Estimate
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CLIMATIQ_API_KEY: CLIMATIQ_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: climatiq-estimate
+    baseUri: https://api.climatiq.io
+    description: Climatiq API — Estimate business capability. Self-contained, no shared references.
+    resources:
+    - name: data-v1-estimate
+      path: /data/v1/estimate
+      operations:
+      - name: estimateemissions
+        method: POST
+        description: Estimate emissions for an activity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.CLIMATIQ_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: climatiq-estimate-rest
+    port: 8080
+    description: REST adapter for Climatiq API — Estimate. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/data/v1/estimate
+      name: data-v1-estimate
+      description: REST surface for data-v1-estimate.
+      operations:
+      - method: POST
+        name: estimateemissions
+        description: Estimate emissions for an activity
+        call: climatiq-estimate.estimateemissions
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: climatiq-estimate-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Climatiq API — Estimate. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: estimate-emissions-activity
+      description: Estimate emissions for an activity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: climatiq-estimate.estimateemissions
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

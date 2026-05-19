@@ -1,0 +1,108 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Climatiq API — Search
+  description: 'Climatiq API — Search. 1 operations. Lead operation: Search emission factors. Self-contained Naftiko capability
+    covering one Climatiq business surface.'
+  tags:
+  - Climatiq
+  - Search
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CLIMATIQ_API_KEY: CLIMATIQ_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: climatiq-search
+    baseUri: https://api.climatiq.io
+    description: Climatiq API — Search business capability. Self-contained, no shared references.
+    resources:
+    - name: data-v1-search
+      path: /data/v1/search
+      operations:
+      - name: searchemissionfactors
+        method: GET
+        description: Search emission factors
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: query
+          in: query
+          type: string
+        - name: data_version
+          in: query
+          type: string
+        - name: region
+          in: query
+          type: string
+        - name: year
+          in: query
+          type: integer
+        - name: source
+          in: query
+          type: string
+        - name: page
+          in: query
+          type: integer
+        - name: results_per_page
+          in: query
+          type: integer
+    authentication:
+      type: bearer
+      token: '{{env.CLIMATIQ_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: climatiq-search-rest
+    port: 8080
+    description: REST adapter for Climatiq API — Search. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/data/v1/search
+      name: data-v1-search
+      description: REST surface for data-v1-search.
+      operations:
+      - method: GET
+        name: searchemissionfactors
+        description: Search emission factors
+        call: climatiq-search.searchemissionfactors
+        with:
+          query: rest.query
+          data_version: rest.data_version
+          region: rest.region
+          year: rest.year
+          source: rest.source
+          page: rest.page
+          results_per_page: rest.results_per_page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: climatiq-search-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Climatiq API — Search. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: search-emission-factors
+      description: Search emission factors
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: climatiq-search.searchemissionfactors
+      with:
+        query: tools.query
+        data_version: tools.data_version
+        region: tools.region
+        year: tools.year
+        source: tools.source
+        page: tools.page
+        results_per_page: tools.results_per_page
+      outputParameters:
+      - type: object
+        mapping: $.
