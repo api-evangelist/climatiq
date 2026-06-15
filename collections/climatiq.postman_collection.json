@@ -1,0 +1,1836 @@
+{
+  "item": [
+    {
+      "id": "405b3ad4-8f7d-4185-9634-cc393d8dfa82",
+      "name": "Search",
+      "description": {
+        "content": "Discover emission factors in the Climatiq dataset.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2421997e-7b21-4749-a9d3-f06772292588",
+          "name": "Search emission factors",
+          "request": {
+            "name": "Search emission factors",
+            "description": {
+              "content": "Returns a paginated list of emission factors matching the given query, region, year, source, sector, and other filter parameters. Used to discover the activity_id needed for estimation calls.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "v1",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "data_version",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "source",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "results_per_page",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a6e38e2-2b6e-4c54-a4e4-d0a0031f5b13",
+              "name": "Matching emission factors.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "v1",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data_version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "results_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8d4bbf13-edfa-402e-943f-f9f14009583d",
+      "name": "Estimate",
+      "description": {
+        "content": "Activity-based emission estimation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4e9ec910-a791-4a1a-a816-a5a5427b89b3",
+          "name": "Estimate emissions for an activity",
+          "request": {
+            "name": "Estimate emissions for an activity",
+            "description": {
+              "content": "Calculates CO2e emissions by combining a selected emission factor (via activity_id or emission_factor object) with caller-supplied activity parameters such as energy used, distance, money spent, or weight moved.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "v1",
+                "estimate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"emission_factor\": {\n    \"activity_id\": \"<string>\",\n    \"data_version\": \"<string>\",\n    \"region\": \"<string>\",\n    \"year\": \"<integer>\",\n    \"source\": \"<string>\"\n  },\n  \"parameters\": {\n    \"key_0\": false\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db5916ab-6466-4035-9470-ef9b39cc3be5",
+              "name": "Calculated emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "v1",
+                    "estimate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"emission_factor\": {\n    \"activity_id\": \"<string>\",\n    \"data_version\": \"<string>\",\n    \"region\": \"<string>\",\n    \"year\": \"<integer>\",\n    \"source\": \"<string>\"\n  },\n  \"parameters\": {\n    \"key_0\": true,\n    \"key_1\": 7523\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"co2e\": 7179.56467177397,\n  \"co2e_unit\": \"kg\",\n  \"co2e_calculation_method\": \"string\",\n  \"co2e_calculation_origin\": \"string\",\n  \"emission_factor\": {},\n  \"constituent_gases\": {\n    \"co2\": 3054.872777809541,\n    \"ch4\": 7413.985054171134,\n    \"n2o\": 9419.215725703354\n  },\n  \"activity_data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e7492542-566c-4b0f-a140-b56f465726f8",
+      "name": "Travel",
+      "description": {
+        "content": "Emissions from passenger travel and accommodation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35b76af7-301f-4985-ba58-52b8b3251ce4",
+          "name": "Estimate car travel emissions",
+          "request": {
+            "name": "Estimate car travel emissions",
+            "description": {
+              "content": "Calculates emissions for passenger car travel based on distance and vehicle parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "travel",
+                "v1",
+                "car"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f7ee5e6b-4827-4039-8486-8c572ac3a4bc",
+              "name": "Car travel emissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "travel",
+                    "v1",
+                    "car"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09efcc5d-162f-4af7-9773-226cdc237552",
+          "name": "Estimate flight emissions",
+          "request": {
+            "name": "Estimate flight emissions",
+            "description": {
+              "content": "Calculates passenger flight emissions for one or more legs using IATA airport codes and class of travel.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "travel",
+                "v1",
+                "flight"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f4c40385-15d7-4da6-8a65-d98d8ca9ef00",
+              "name": "Flight emissions estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "travel",
+                    "v1",
+                    "flight"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e94b19f-6719-4d24-acd0-80683fdb332c",
+          "name": "Estimate hotel stay emissions",
+          "request": {
+            "name": "Estimate hotel stay emissions",
+            "description": {
+              "content": "Calculates emissions associated with hotel accommodation by country, number of nights, and number of rooms.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "travel",
+                "v1",
+                "hotel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e3a385ae-c23c-4d68-ac36-964712f215be",
+              "name": "Hotel stay emissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "travel",
+                    "v1",
+                    "hotel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "78da7058-5c2c-4642-a8b4-d0f36fa05368",
+      "name": "Freight",
+      "description": {
+        "content": "Multi-modal freight emissions using GLEC factors.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "714e96b9-be64-4fa9-b64a-f86ccc67c1d9",
+          "name": "Estimate intermodal freight emissions",
+          "request": {
+            "name": "Estimate intermodal freight emissions",
+            "description": {
+              "content": "Calculates well-to-wheel freight emissions across multi-leg journeys using GLEC factors for sea, air, road, and rail.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "freight",
+                "v3",
+                "intermodal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "311d4feb-4abd-4d25-a5b9-03e000918e9a",
+              "name": "Freight emissions per leg and total.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "freight",
+                    "v3",
+                    "intermodal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "086b1fec-d4b1-4a47-a2a5-b6c3b05bcd8c",
+      "name": "Energy",
+      "description": {
+        "content": "Emissions from electricity, heat, and fuel consumption.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "190e6320-c4b0-4e85-b76e-ad6a5587c3ad",
+          "name": "Estimate electricity emissions",
+          "request": {
+            "name": "Estimate electricity emissions",
+            "description": {
+              "content": "Calculates Scope 2 electricity emissions for a given region and amount of energy consumed, with optional location-based and market-based methods.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "energy",
+                "v1",
+                "electricity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "29584c3d-dd90-4383-96d6-4b54608831cf",
+              "name": "Electricity emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "energy",
+                    "v1",
+                    "electricity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c30e0976-39be-4a4b-89a9-4bc0fbc6f0ca",
+          "name": "Estimate heat and steam emissions",
+          "request": {
+            "name": "Estimate heat and steam emissions",
+            "description": {
+              "content": "Calculates emissions from purchased heat or steam using region-appropriate factors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "energy",
+                "v1",
+                "heat-and-steam"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14b5d53a-be45-495d-9360-de78a6f0c905",
+              "name": "Heat and steam emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "energy",
+                    "v1",
+                    "heat-and-steam"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1e4fe78-0933-41a0-887b-1cea4be0d3d1",
+          "name": "Estimate fuel combustion emissions",
+          "request": {
+            "name": "Estimate fuel combustion emissions",
+            "description": {
+              "content": "Calculates Scope 1 emissions for combustion of liquid, gaseous, and solid fuels.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "energy",
+                "v1",
+                "fuel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e105f7c9-7367-4866-962c-faf754a17312",
+              "name": "Fuel emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "energy",
+                    "v1",
+                    "fuel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "02196142-8d0c-4314-aad6-17f262369aaa",
+      "name": "Computing",
+      "description": {
+        "content": "Cloud computing carbon footprint.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ab14a2ac-58fa-4b73-8346-dc272301459b",
+          "name": "Estimate cloud CPU emissions",
+          "request": {
+            "name": "Estimate cloud CPU emissions",
+            "description": {
+              "content": "Calculates the CO2e of CPU usage on a cloud provider, automatically selecting region-specific grid factors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "compute",
+                "v1",
+                "cpu"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6f893ad6-729c-4ce4-bed0-04448fdd2a38",
+              "name": "Cloud CPU emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "compute",
+                    "v1",
+                    "cpu"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07652acb-f196-4697-b98d-4546d1c77574",
+          "name": "Estimate cloud memory emissions",
+          "request": {
+            "name": "Estimate cloud memory emissions",
+            "description": {
+              "content": "Calculates emissions from RAM usage on a cloud provider in a specified region.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "compute",
+                "v1",
+                "memory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8121c0f6-3f31-43f4-8832-0b0bf4c703a4",
+              "name": "Cloud memory emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "compute",
+                    "v1",
+                    "memory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1667b19-1e51-4502-b438-873835a0c0e4",
+          "name": "Estimate cloud storage emissions",
+          "request": {
+            "name": "Estimate cloud storage emissions",
+            "description": {
+              "content": "Calculates emissions from object or block storage on a cloud provider in a specified region.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "compute",
+                "v1",
+                "storage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3f3e75b-db5e-470c-b910-deac8aa86312",
+              "name": "Cloud storage emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "compute",
+                    "v1",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1fb4cead-c9b7-473b-8c1c-d168555d8fea",
+      "name": "Procurement",
+      "description": {
+        "content": "Spend-based emissions for purchased goods and services.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3cea6024-f2b1-40b9-8560-a5a5c7e3ee05",
+          "name": "Estimate spend-based procurement emissions",
+          "request": {
+            "name": "Estimate spend-based procurement emissions",
+            "description": {
+              "content": "Calculates Scope 3.1 emissions from purchased goods and services using expenditure data and EEIO factors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "procurement",
+                "v1",
+                "spend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b534ddf3-bac2-42e7-bbc6-179aa9756ca7",
+              "name": "Procurement spend emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "procurement",
+                    "v1",
+                    "spend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ca7faa8e-7018-4b39-8ccf-798cd7618060",
+      "name": "Autopilot",
+      "description": {
+        "content": "AI-driven automated emissions calculation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2443f89b-dcd4-435d-b19f-78d77fa89779",
+          "name": "Calculate emissions automatically with Autopilot",
+          "request": {
+            "name": "Calculate emissions automatically with Autopilot",
+            "description": {
+              "content": "Uses Climatiq's NLP model to interpret a free-text description and automatically select an emission factor and method.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "v1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "40d0c8b2-5f31-4275-9127-d75dc8327078",
+              "name": "Autopilot emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "049543b4-bd1e-4281-80ef-feb1b0d74ea0",
+      "name": "Classifications",
+      "description": {
+        "content": "Industry classification mappings for emission factors.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1afde96d-5198-47d8-86c4-a328cc25232a",
+          "name": "List supported industry classifications",
+          "request": {
+            "name": "List supported industry classifications",
+            "description": {
+              "content": "Returns the list of supported industry-classification systems and how they map to Climatiq emission factors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "classifications",
+                "v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e27d413d-d470-4312-8b0c-db4b9679744c",
+              "name": "Available classification systems.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "classifications",
+                    "v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "21a703ce-4521-44bc-a178-916964c1ba8e",
+      "name": "CBAM",
+      "description": {
+        "content": "EU Carbon Border Adjustment Mechanism reporting.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23f52d73-5a53-4988-afca-65eece40becb",
+          "name": "Estimate CBAM embedded emissions",
+          "request": {
+            "name": "Estimate CBAM embedded emissions",
+            "description": {
+              "content": "Calculates embedded emissions for goods covered by the EU Carbon Border Adjustment Mechanism.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cbam",
+                "v1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9e61239b-05e3-4edf-8b12-693833116203",
+              "name": "CBAM emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cbam",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e44e28bc-50b0-4614-9841-e070342b6aaf",
+      "name": "Reference",
+      "description": {
+        "content": "Reference data such as regions and unit types.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3f282575-ca3a-4693-87c9-b6bc87dd501e",
+          "name": "List supported regions",
+          "request": {
+            "name": "List supported regions",
+            "description": {
+              "content": "Returns the geographic regions Climatiq supports for region-specific emission factors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "v1",
+                "regions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07d79139-8244-4b5e-bbe2-8e25e35ec349",
+              "name": "Supported regions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "v1",
+                    "regions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef3b0aab-e101-4b59-947a-362fefd1b5f4",
+          "name": "List supported unit types",
+          "request": {
+            "name": "List supported unit types",
+            "description": {
+              "content": "Returns the unit types accepted by estimation endpoints (energy, distance, weight, money, etc.).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "v1",
+                "unit-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ed082f6-fc99-493e-a3b3-cc15ba30e04d",
+              "name": "Supported unit types.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "v1",
+                    "unit-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.climatiq.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "21401156-7661-442c-905b-be7ee3302c00",
+    "name": "Climatiq API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+      "type": "text/plain"
+    }
+  }
+}

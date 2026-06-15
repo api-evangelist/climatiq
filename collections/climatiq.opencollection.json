@@ -1,0 +1,395 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search emission factors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.climatiq.io/data/v1/search",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "data_version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "results_per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of emission factors matching the given query, region, year, source, sector, and other filter parameters. Used to discover the activity_id needed for estimation calls."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Estimate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate emissions for an activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/data/v1/estimate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates CO2e emissions by combining a selected emission factor (via activity_id or emission_factor object) with caller-supplied activity parameters such as energy used, distance, money spent, or weight moved."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Travel",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate car travel emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/travel/v1/car",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions for passenger car travel based on distance and vehicle parameters."
+        },
+        {
+          "info": {
+            "name": "Estimate flight emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/travel/v1/flight",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates passenger flight emissions for one or more legs using IATA airport codes and class of travel."
+        },
+        {
+          "info": {
+            "name": "Estimate hotel stay emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/travel/v1/hotel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions associated with hotel accommodation by country, number of nights, and number of rooms."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Freight",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate intermodal freight emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/freight/v3/intermodal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates well-to-wheel freight emissions across multi-leg journeys using GLEC factors for sea, air, road, and rail."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Energy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate electricity emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/energy/v1/electricity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates Scope 2 electricity emissions for a given region and amount of energy consumed, with optional location-based and market-based methods."
+        },
+        {
+          "info": {
+            "name": "Estimate heat and steam emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/energy/v1/heat-and-steam",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions from purchased heat or steam using region-appropriate factors."
+        },
+        {
+          "info": {
+            "name": "Estimate fuel combustion emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/energy/v1/fuel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates Scope 1 emissions for combustion of liquid, gaseous, and solid fuels."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Computing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate cloud CPU emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/compute/v1/cpu",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates the CO2e of CPU usage on a cloud provider, automatically selecting region-specific grid factors."
+        },
+        {
+          "info": {
+            "name": "Estimate cloud memory emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/compute/v1/memory",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions from RAM usage on a cloud provider in a specified region."
+        },
+        {
+          "info": {
+            "name": "Estimate cloud storage emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/compute/v1/storage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions from object or block storage on a cloud provider in a specified region."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Procurement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate spend-based procurement emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/procurement/v1/spend",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates Scope 3.1 emissions from purchased goods and services using expenditure data and EEIO factors."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Autopilot",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Calculate emissions automatically with Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/autopilot/v1",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Uses Climatiq's NLP model to interpret a free-text description and automatically select an emission factor and method."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Classifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List supported industry classifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.climatiq.io/classifications/v2"
+          },
+          "docs": "Returns the list of supported industry-classification systems and how they map to Climatiq emission factors."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CBAM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate CBAM embedded emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/cbam/v1",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates embedded emissions for goods covered by the EU Carbon Border Adjustment Mechanism."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reference",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List supported regions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.climatiq.io/data/v1/regions"
+          },
+          "docs": "Returns the geographic regions Climatiq supports for region-specific emission factors."
+        },
+        {
+          "info": {
+            "name": "List supported unit types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.climatiq.io/data/v1/unit-types"
+          },
+          "docs": "Returns the unit types accepted by estimation endpoints (energy, distance, weight, money, etc.)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
