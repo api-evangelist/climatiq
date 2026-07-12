@@ -74,6 +74,10 @@ apis:
       endpoints for regions and unit types. All endpoints return CO2e in kilograms together with the underlying factor
       and gas breakdown.
 common:
+  - type: DomainSecurity
+    url: security/climatiq-domain-security.yml
+  - type: Authentication
+    url: authentication/climatiq-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/climatiq
   - type: LinkedIn
