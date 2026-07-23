@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Climatiq Autopilot Search API
+  version: '3'
+  description: Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+- url: https://api.climatiq.io
+  description: Climatiq Production API
+security:
+- bearerAuth: []
+tags:
+- name: Search
+  description: Discover emission factors in the Climatiq dataset.
+paths:
+  /data/v1/search:
+    get:
+      operationId: searchEmissionFactors
+      summary: Search emission factors
+      description: Returns a paginated list of emission factors matching the given query, region, year, source, sector, and other filter parameters. Used to discover the activity_id needed for estimation calls.
+      tags:
+      - Search
+      parameters:
+      - name: query
+        in: query
+        schema:
+          type: string
+      - name: data_version
+        in: query
+        schema:
+          type: string
+      - name: region
+        in: query
+        schema:
+          type: string
+      - name: year
+        in: query
+        schema:
+          type: integer
+      - name: source
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+      - name: results_per_page
+        in: query
+        schema:
+          type: integer
+          default: 10
+          maximum: 500
+      responses:
+        '200':
+          description: Matching emission factors.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

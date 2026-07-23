@@ -1,0 +1,46 @@
+openapi: 3.1.0
+info:
+  title: Climatiq Autopilot Reference API
+  version: '3'
+  description: Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+- url: https://api.climatiq.io
+  description: Climatiq Production API
+security:
+- bearerAuth: []
+tags:
+- name: Reference
+  description: Reference data such as regions and unit types.
+paths:
+  /data/v1/regions:
+    get:
+      operationId: listRegions
+      summary: List supported regions
+      description: Returns the geographic regions Climatiq supports for region-specific emission factors.
+      tags:
+      - Reference
+      responses:
+        '200':
+          description: Supported regions.
+  /data/v1/unit-types:
+    get:
+      operationId: listUnitTypes
+      summary: List supported unit types
+      description: Returns the unit types accepted by estimation endpoints (energy, distance, weight, money, etc.).
+      tags:
+      - Reference
+      responses:
+        '200':
+          description: Supported unit types.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

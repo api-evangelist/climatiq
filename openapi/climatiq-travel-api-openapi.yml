@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: Climatiq Autopilot Travel API
+  version: '3'
+  description: Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+- url: https://api.climatiq.io
+  description: Climatiq Production API
+security:
+- bearerAuth: []
+tags:
+- name: Travel
+  description: Emissions from passenger travel and accommodation.
+paths:
+  /travel/v1/car:
+    post:
+      operationId: estimateTravelCar
+      summary: Estimate car travel emissions
+      description: Calculates emissions for passenger car travel based on distance and vehicle parameters.
+      tags:
+      - Travel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Car travel emissions.
+  /travel/v1/flight:
+    post:
+      operationId: estimateTravelFlight
+      summary: Estimate flight emissions
+      description: Calculates passenger flight emissions for one or more legs using IATA airport codes and class of travel.
+      tags:
+      - Travel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Flight emissions estimate.
+  /travel/v1/hotel:
+    post:
+      operationId: estimateTravelHotel
+      summary: Estimate hotel stay emissions
+      description: Calculates emissions associated with hotel accommodation by country, number of nights, and number of rooms.
+      tags:
+      - Travel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Hotel stay emissions.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

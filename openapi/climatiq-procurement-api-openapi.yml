@@ -1,0 +1,42 @@
+openapi: 3.1.0
+info:
+  title: Climatiq Autopilot Procurement API
+  version: '3'
+  description: Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+- url: https://api.climatiq.io
+  description: Climatiq Production API
+security:
+- bearerAuth: []
+tags:
+- name: Procurement
+  description: Spend-based emissions for purchased goods and services.
+paths:
+  /procurement/v1/spend:
+    post:
+      operationId: estimateProcurementSpend
+      summary: Estimate spend-based procurement emissions
+      description: Calculates Scope 3.1 emissions from purchased goods and services using expenditure data and EEIO factors.
+      tags:
+      - Procurement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Procurement spend emission estimate.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

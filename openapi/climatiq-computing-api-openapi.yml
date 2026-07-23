@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: Climatiq Autopilot Computing API
+  version: '3'
+  description: Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+- url: https://api.climatiq.io
+  description: Climatiq Production API
+security:
+- bearerAuth: []
+tags:
+- name: Computing
+  description: Cloud computing carbon footprint.
+paths:
+  /compute/v1/cpu:
+    post:
+      operationId: estimateCloudCpu
+      summary: Estimate cloud CPU emissions
+      description: Calculates the CO2e of CPU usage on a cloud provider, automatically selecting region-specific grid factors.
+      tags:
+      - Computing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cloud CPU emission estimate.
+  /compute/v1/memory:
+    post:
+      operationId: estimateCloudMemory
+      summary: Estimate cloud memory emissions
+      description: Calculates emissions from RAM usage on a cloud provider in a specified region.
+      tags:
+      - Computing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cloud memory emission estimate.
+  /compute/v1/storage:
+    post:
+      operationId: estimateCloudStorage
+      summary: Estimate cloud storage emissions
+      description: Calculates emissions from object or block storage on a cloud provider in a specified region.
+      tags:
+      - Computing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cloud storage emission estimate.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

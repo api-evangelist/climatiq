@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: Climatiq Autopilot Energy API
+  version: '3'
+  description: Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+- url: https://api.climatiq.io
+  description: Climatiq Production API
+security:
+- bearerAuth: []
+tags:
+- name: Energy
+  description: Emissions from electricity, heat, and fuel consumption.
+paths:
+  /energy/v1/electricity:
+    post:
+      operationId: estimateElectricity
+      summary: Estimate electricity emissions
+      description: Calculates Scope 2 electricity emissions for a given region and amount of energy consumed, with optional location-based and market-based methods.
+      tags:
+      - Energy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Electricity emission estimate.
+  /energy/v1/heat-and-steam:
+    post:
+      operationId: estimateHeatSteam
+      summary: Estimate heat and steam emissions
+      description: Calculates emissions from purchased heat or steam using region-appropriate factors.
+      tags:
+      - Energy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Heat and steam emission estimate.
+  /energy/v1/fuel:
+    post:
+      operationId: estimateFuel
+      summary: Estimate fuel combustion emissions
+      description: Calculates Scope 1 emissions for combustion of liquid, gaseous, and solid fuels.
+      tags:
+      - Energy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Fuel emission estimate.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

@@ -1,0 +1,94 @@
+openapi: 3.1.0
+info:
+  title: Climatiq Autopilot Estimate API
+  version: '3'
+  description: Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.
+  contact:
+    name: Climatiq Support
+    url: https://www.climatiq.io/support
+  license:
+    name: Climatiq Terms of Service
+    url: https://www.climatiq.io/legal/terms
+servers:
+- url: https://api.climatiq.io
+  description: Climatiq Production API
+security:
+- bearerAuth: []
+tags:
+- name: Estimate
+  description: Activity-based emission estimation.
+paths:
+  /data/v1/estimate:
+    post:
+      operationId: estimateEmissions
+      summary: Estimate emissions for an activity
+      description: Calculates CO2e emissions by combining a selected emission factor (via activity_id or emission_factor object) with caller-supplied activity parameters such as energy used, distance, money spent, or weight moved.
+      tags:
+      - Estimate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EstimationRequest'
+      responses:
+        '200':
+          description: Calculated emission estimate.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EstimationResponse'
+components:
+  schemas:
+    EstimationResponse:
+      type: object
+      properties:
+        co2e:
+          type: number
+        co2e_unit:
+          type: string
+          example: kg
+        co2e_calculation_method:
+          type: string
+        co2e_calculation_origin:
+          type: string
+        emission_factor:
+          type: object
+        constituent_gases:
+          type: object
+          properties:
+            co2:
+              type: number
+            ch4:
+              type: number
+            n2o:
+              type: number
+        activity_data:
+          type: object
+    EstimationRequest:
+      type: object
+      required:
+      - emission_factor
+      - parameters
+      properties:
+        emission_factor:
+          type: object
+          properties:
+            activity_id:
+              type: string
+            data_version:
+              type: string
+            region:
+              type: string
+            year:
+              type: integer
+            source:
+              type: string
+        parameters:
+          type: object
+          additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
