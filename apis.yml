@@ -1,6 +1,19 @@
 aid: climatiq
 name: Climatiq
 url: https://raw.githubusercontent.com/api-evangelist/climatiq/refs/heads/main/apis.yml
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 created: '2025-02-24'
 modified: '2026-05-19'
 specificationVersion: '0.19'
@@ -8,7 +21,7 @@ type: Index
 access: 3rd-Party
 position: Consumer
 kind: company
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/climatiq.png
 tags:
   - Carbon Accounting
   - Carbon Emissions
@@ -25,55 +38,427 @@ description: >-
   procurement, and the EU Carbon Border Adjustment Mechanism. The API is keyed (Bearer token) and hosted at
   api.climatiq.io.
 apis:
-  - aid: climatiq:climatiq-api
-    name: Climatiq API
-    tags:
-      - Carbon Emissions
-      - Emission Factors
-      - GHG Protocol
-      - Sustainability
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.climatiq.io/docs/api-reference
-    baseURL: https://api.climatiq.io
-    properties:
-      - url: https://www.climatiq.io/docs/api-reference
-        type: Documentation
-      - url: https://www.climatiq.io/docs/guides/tutorials/quickstart
-        type: GettingStarted
-      - url: https://www.climatiq.io/docs/api-reference/search
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/estimate
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/travel
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/intermodal-freight
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/energy
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/computing
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/procurement
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/autopilot
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/classifications
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/custom-mappings
-        type: Reference
-      - url: https://www.climatiq.io/docs/api-reference/cbam
-        type: Reference
-      - url: https://www.climatiq.io/docs/changelogs/api-release
-        type: ChangeLog
-      - url: openapi/climatiq-openapi.yml
-        type: OpenAPI
-    description: >-
-      The Climatiq API is a single REST surface at api.climatiq.io that groups search, estimation, and reference
-      operations under a shared API-key (Bearer) auth model. It exposes /data/v1/search for discovering emission
-      factors; /data/v1/estimate for activity-based estimation; family endpoints under /travel, /freight, /energy,
-      /compute, /procurement, /autopilot, /classifications, and /cbam for purpose-built calculations; and reference
-      endpoints for regions and unit types. All endpoints return CO2e in kilograms together with the underlying factor
-      and gas breakdown.
+- aid: climatiq:climatiq-autopilot-api
+  name: Climatiq Autopilot API
+  description: AI-driven automated emissions calculation.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Autopilot
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-autopilot-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-cbam-api
+  name: Climatiq CBAM API
+  description: EU Carbon Border Adjustment Mechanism reporting.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - CBAM
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-cbam-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-classifications-api
+  name: Climatiq Classifications API
+  description: Industry classification mappings for emission factors.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Classifications
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-classifications-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-computing-api
+  name: Climatiq Computing API
+  description: Cloud computing carbon footprint.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Computing
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-computing-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-energy-api
+  name: Climatiq Energy API
+  description: Emissions from electricity, heat, and fuel consumption.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Energy
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-energy-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-estimate-api
+  name: Climatiq Estimate API
+  description: Activity-based emission estimation.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Estimate
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-estimate-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-freight-api
+  name: Climatiq Freight API
+  description: Multi-modal freight emissions using GLEC factors.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Freight
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-freight-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-procurement-api
+  name: Climatiq Procurement API
+  description: Spend-based emissions for purchased goods and services.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Procurement
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-procurement-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-reference-api
+  name: Climatiq Reference API
+  description: Reference data such as regions and unit types.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Reference
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-reference-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-search-api
+  name: Climatiq Search API
+  description: Discover emission factors in the Climatiq dataset.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
+- aid: climatiq:climatiq-travel-api
+  name: Climatiq Travel API
+  description: Emissions from passenger travel and accommodation.
+  humanURL: https://www.climatiq.io/docs/api-reference
+  baseURL: https://api.climatiq.io
+  tags:
+  - Travel
+  properties:
+  - type: OpenAPI
+    url: openapi/climatiq-travel-api-openapi.yml
+  - type: Documentation
+    url: https://www.climatiq.io/docs/api-reference
+  - type: GettingStarted
+    url: https://www.climatiq.io/docs/guides/tutorials/quickstart
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/search
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/estimate
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/travel
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/intermodal-freight
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/energy
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/computing
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/procurement
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/autopilot
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/classifications
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/custom-mappings
+  - type: Reference
+    url: https://www.climatiq.io/docs/api-reference/cbam
+  - type: ChangeLog
+    url: https://www.climatiq.io/docs/changelogs/api-release
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/climatiq/overview
   - type: AgenticAccess
     url: agentic-access/climatiq-agentic-access.yml
   - type: DomainSecurity
