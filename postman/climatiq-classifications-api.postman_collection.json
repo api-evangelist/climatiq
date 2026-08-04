@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "6ade9e91-61df-440f-b62c-58616847e31f",
+    "name": "Climatiq Autopilot Classifications API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:22.000Z",
+    "updatedAt": "2026-07-28T01:22:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6ade9e91-61df-440f-b62c-58616847e31f"
+  },
+  "item": [
+    {
+      "name": "classifications",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "List supported industry classifications",
+              "id": "b2cf0e12-6744-45a0-a439-bdc08ac507a1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/classifications/v2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "classifications",
+                    "v2"
+                  ]
+                },
+                "description": "Returns the list of supported industry-classification systems and how they map to Climatiq emission factors."
+              },
+              "response": [
+                {
+                  "id": "b3e5dd8f-e5a7-4231-b010-c44e0f212390",
+                  "name": "Available classification systems.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/classifications/v2",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "classifications",
+                        "v2"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:22:22.000Z",
+                  "updatedAt": "2026-07-28T01:22:22.000Z",
+                  "uid": "35240-b3e5dd8f-e5a7-4231-b010-c44e0f212390"
+                }
+              ],
+              "createdAt": "2026-07-28T01:22:22.000Z",
+              "updatedAt": "2026-07-28T01:22:22.000Z",
+              "uid": "35240-b2cf0e12-6744-45a0-a439-bdc08ac507a1"
+            }
+          ],
+          "id": "00bf37a4-f3b5-443e-bd7a-30d313418ec9",
+          "createdAt": "2026-07-28T01:22:22.000Z",
+          "updatedAt": "2026-07-28T01:22:22.000Z",
+          "uid": "35240-00bf37a4-f3b5-443e-bd7a-30d313418ec9"
+        }
+      ],
+      "id": "a89f2a1b-f8d3-496d-965a-bdc0cf374540",
+      "createdAt": "2026-07-28T01:22:22.000Z",
+      "updatedAt": "2026-07-28T01:22:22.000Z",
+      "uid": "35240-a89f2a1b-f8d3-496d-965a-bdc0cf374540"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

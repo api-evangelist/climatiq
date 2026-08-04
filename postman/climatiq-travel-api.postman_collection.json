@@ -1,0 +1,351 @@
+{
+  "info": {
+    "_postman_id": "8914c81c-649e-48a4-a89e-038d3fddfb78",
+    "name": "Climatiq Autopilot Travel API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:29.000Z",
+    "updatedAt": "2026-07-28T01:22:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8914c81c-649e-48a4-a89e-038d3fddfb78"
+  },
+  "item": [
+    {
+      "name": "travel",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "car",
+              "item": [
+                {
+                  "name": "Estimate car travel emissions",
+                  "id": "d5b79fc8-d047-4687-9422-a875e9b84035",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/travel/v1/car",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "travel",
+                        "v1",
+                        "car"
+                      ]
+                    },
+                    "description": "Calculates emissions for passenger car travel based on distance and vehicle parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "0dc7ec02-7cab-4b26-b6c6-052ef8998003",
+                      "name": "Car travel emissions.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/travel/v1/car",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "travel",
+                            "v1",
+                            "car"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:30.000Z",
+                      "updatedAt": "2026-07-28T01:22:30.000Z",
+                      "uid": "35240-0dc7ec02-7cab-4b26-b6c6-052ef8998003"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:30.000Z",
+                  "updatedAt": "2026-07-28T01:22:30.000Z",
+                  "uid": "35240-d5b79fc8-d047-4687-9422-a875e9b84035"
+                }
+              ],
+              "id": "64a70e9a-e1af-46e9-9777-5ac78881a574",
+              "createdAt": "2026-07-28T01:22:30.000Z",
+              "updatedAt": "2026-07-28T01:22:30.000Z",
+              "uid": "35240-64a70e9a-e1af-46e9-9777-5ac78881a574"
+            },
+            {
+              "name": "flight",
+              "item": [
+                {
+                  "name": "Estimate flight emissions",
+                  "id": "9b167da6-249e-4659-a8f6-8c2917f7ca13",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/travel/v1/flight",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "travel",
+                        "v1",
+                        "flight"
+                      ]
+                    },
+                    "description": "Calculates passenger flight emissions for one or more legs using IATA airport codes and class of travel."
+                  },
+                  "response": [
+                    {
+                      "id": "d0f0e018-3bfb-4056-a08e-c19e6ec4a6b6",
+                      "name": "Flight emissions estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/travel/v1/flight",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "travel",
+                            "v1",
+                            "flight"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:30.000Z",
+                      "updatedAt": "2026-07-28T01:22:30.000Z",
+                      "uid": "35240-d0f0e018-3bfb-4056-a08e-c19e6ec4a6b6"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:30.000Z",
+                  "updatedAt": "2026-07-28T01:22:30.000Z",
+                  "uid": "35240-9b167da6-249e-4659-a8f6-8c2917f7ca13"
+                }
+              ],
+              "id": "ff14c947-1c10-4b23-affe-a868ec3a793b",
+              "createdAt": "2026-07-28T01:22:30.000Z",
+              "updatedAt": "2026-07-28T01:22:30.000Z",
+              "uid": "35240-ff14c947-1c10-4b23-affe-a868ec3a793b"
+            },
+            {
+              "name": "hotel",
+              "item": [
+                {
+                  "name": "Estimate hotel stay emissions",
+                  "id": "ea41220c-b6ec-4493-856a-0cc23e70cb90",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/travel/v1/hotel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "travel",
+                        "v1",
+                        "hotel"
+                      ]
+                    },
+                    "description": "Calculates emissions associated with hotel accommodation by country, number of nights, and number of rooms."
+                  },
+                  "response": [
+                    {
+                      "id": "b54d8ffe-b7eb-4e31-98a0-e8629b014ff3",
+                      "name": "Hotel stay emissions.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/travel/v1/hotel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "travel",
+                            "v1",
+                            "hotel"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:30.000Z",
+                      "updatedAt": "2026-07-28T01:22:30.000Z",
+                      "uid": "35240-b54d8ffe-b7eb-4e31-98a0-e8629b014ff3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:30.000Z",
+                  "updatedAt": "2026-07-28T01:22:30.000Z",
+                  "uid": "35240-ea41220c-b6ec-4493-856a-0cc23e70cb90"
+                }
+              ],
+              "id": "660b503f-5b19-4968-befd-5fa837b1a1a9",
+              "createdAt": "2026-07-28T01:22:30.000Z",
+              "updatedAt": "2026-07-28T01:22:30.000Z",
+              "uid": "35240-660b503f-5b19-4968-befd-5fa837b1a1a9"
+            }
+          ],
+          "id": "7cc0569f-4335-47a4-90aa-8b8e4fe8e63a",
+          "createdAt": "2026-07-28T01:22:30.000Z",
+          "updatedAt": "2026-07-28T01:22:30.000Z",
+          "uid": "35240-7cc0569f-4335-47a4-90aa-8b8e4fe8e63a"
+        }
+      ],
+      "id": "a62c6ec5-6024-4ead-ae8d-4271ef958528",
+      "createdAt": "2026-07-28T01:22:30.000Z",
+      "updatedAt": "2026-07-28T01:22:30.000Z",
+      "uid": "35240-a62c6ec5-6024-4ead-ae8d-4271ef958528"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

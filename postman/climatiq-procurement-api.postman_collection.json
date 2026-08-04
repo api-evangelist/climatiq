@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "a2e792f4-0ecb-40d5-a03a-8593520b35fc",
+    "name": "Climatiq Autopilot Procurement API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:27.000Z",
+    "updatedAt": "2026-07-28T01:22:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a2e792f4-0ecb-40d5-a03a-8593520b35fc"
+  },
+  "item": [
+    {
+      "name": "procurement",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "spend",
+              "item": [
+                {
+                  "name": "Estimate spend-based procurement emissions",
+                  "id": "660d5a36-3010-4891-b9fe-f6cc1727dd41",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/procurement/v1/spend",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "procurement",
+                        "v1",
+                        "spend"
+                      ]
+                    },
+                    "description": "Calculates Scope 3.1 emissions from purchased goods and services using expenditure data and EEIO factors."
+                  },
+                  "response": [
+                    {
+                      "id": "ceae4760-d390-417f-86a8-f10e2908cff4",
+                      "name": "Procurement spend emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/procurement/v1/spend",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "procurement",
+                            "v1",
+                            "spend"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:27.000Z",
+                      "updatedAt": "2026-07-28T01:22:27.000Z",
+                      "uid": "35240-ceae4760-d390-417f-86a8-f10e2908cff4"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:27.000Z",
+                  "updatedAt": "2026-07-28T01:22:27.000Z",
+                  "uid": "35240-660d5a36-3010-4891-b9fe-f6cc1727dd41"
+                }
+              ],
+              "id": "37507f95-efe6-442a-8c1c-ee66603332a3",
+              "createdAt": "2026-07-28T01:22:27.000Z",
+              "updatedAt": "2026-07-28T01:22:27.000Z",
+              "uid": "35240-37507f95-efe6-442a-8c1c-ee66603332a3"
+            }
+          ],
+          "id": "c5fa9e09-50a7-40e5-a010-344df33c72ea",
+          "createdAt": "2026-07-28T01:22:27.000Z",
+          "updatedAt": "2026-07-28T01:22:27.000Z",
+          "uid": "35240-c5fa9e09-50a7-40e5-a010-344df33c72ea"
+        }
+      ],
+      "id": "80531cfc-41db-4905-a8d4-16d3cc3f9e98",
+      "createdAt": "2026-07-28T01:22:27.000Z",
+      "updatedAt": "2026-07-28T01:22:27.000Z",
+      "uid": "35240-80531cfc-41db-4905-a8d4-16d3cc3f9e98"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

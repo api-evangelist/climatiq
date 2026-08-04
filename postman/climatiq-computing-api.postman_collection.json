@@ -1,0 +1,351 @@
+{
+  "info": {
+    "_postman_id": "381090ac-fa97-4bba-9a4b-8cf9de50d73f",
+    "name": "Climatiq Autopilot Computing API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:23.000Z",
+    "updatedAt": "2026-07-28T01:22:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-381090ac-fa97-4bba-9a4b-8cf9de50d73f"
+  },
+  "item": [
+    {
+      "name": "compute",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "cpu",
+              "item": [
+                {
+                  "name": "Estimate cloud CPU emissions",
+                  "id": "ac8e469e-4fd8-4e88-bb27-f4f9fadf0796",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/compute/v1/cpu",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "compute",
+                        "v1",
+                        "cpu"
+                      ]
+                    },
+                    "description": "Calculates the CO2e of CPU usage on a cloud provider, automatically selecting region-specific grid factors."
+                  },
+                  "response": [
+                    {
+                      "id": "7394189a-ff09-4738-ae04-9a7f26c252ce",
+                      "name": "Cloud CPU emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/compute/v1/cpu",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "compute",
+                            "v1",
+                            "cpu"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:23.000Z",
+                      "updatedAt": "2026-07-28T01:22:23.000Z",
+                      "uid": "35240-7394189a-ff09-4738-ae04-9a7f26c252ce"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:23.000Z",
+                  "updatedAt": "2026-07-28T01:22:23.000Z",
+                  "uid": "35240-ac8e469e-4fd8-4e88-bb27-f4f9fadf0796"
+                }
+              ],
+              "id": "deaf90fd-05b6-41e5-9618-1dc691d6a49a",
+              "createdAt": "2026-07-28T01:22:23.000Z",
+              "updatedAt": "2026-07-28T01:22:23.000Z",
+              "uid": "35240-deaf90fd-05b6-41e5-9618-1dc691d6a49a"
+            },
+            {
+              "name": "memory",
+              "item": [
+                {
+                  "name": "Estimate cloud memory emissions",
+                  "id": "c4a3af2f-f5c0-4262-8e37-673b4f790a6a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/compute/v1/memory",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "compute",
+                        "v1",
+                        "memory"
+                      ]
+                    },
+                    "description": "Calculates emissions from RAM usage on a cloud provider in a specified region."
+                  },
+                  "response": [
+                    {
+                      "id": "46bfe88c-90a9-4020-a175-5192a488c370",
+                      "name": "Cloud memory emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/compute/v1/memory",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "compute",
+                            "v1",
+                            "memory"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:23.000Z",
+                      "updatedAt": "2026-07-28T01:22:23.000Z",
+                      "uid": "35240-46bfe88c-90a9-4020-a175-5192a488c370"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:23.000Z",
+                  "updatedAt": "2026-07-28T01:22:23.000Z",
+                  "uid": "35240-c4a3af2f-f5c0-4262-8e37-673b4f790a6a"
+                }
+              ],
+              "id": "15558095-db47-417f-88f1-d6cdc6a916bc",
+              "createdAt": "2026-07-28T01:22:23.000Z",
+              "updatedAt": "2026-07-28T01:22:23.000Z",
+              "uid": "35240-15558095-db47-417f-88f1-d6cdc6a916bc"
+            },
+            {
+              "name": "storage",
+              "item": [
+                {
+                  "name": "Estimate cloud storage emissions",
+                  "id": "1eb9943a-7b9f-4b20-9a82-3a390a8ff55a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/compute/v1/storage",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "compute",
+                        "v1",
+                        "storage"
+                      ]
+                    },
+                    "description": "Calculates emissions from object or block storage on a cloud provider in a specified region."
+                  },
+                  "response": [
+                    {
+                      "id": "27362594-5fbb-4dfe-aeaa-05f4124e997c",
+                      "name": "Cloud storage emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/compute/v1/storage",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "compute",
+                            "v1",
+                            "storage"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:23.000Z",
+                      "updatedAt": "2026-07-28T01:22:23.000Z",
+                      "uid": "35240-27362594-5fbb-4dfe-aeaa-05f4124e997c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:23.000Z",
+                  "updatedAt": "2026-07-28T01:22:23.000Z",
+                  "uid": "35240-1eb9943a-7b9f-4b20-9a82-3a390a8ff55a"
+                }
+              ],
+              "id": "67a49453-feb8-456f-a04b-351265aa1680",
+              "createdAt": "2026-07-28T01:22:23.000Z",
+              "updatedAt": "2026-07-28T01:22:23.000Z",
+              "uid": "35240-67a49453-feb8-456f-a04b-351265aa1680"
+            }
+          ],
+          "id": "b69eccfc-bb76-4943-826d-2cc842d313d3",
+          "createdAt": "2026-07-28T01:22:23.000Z",
+          "updatedAt": "2026-07-28T01:22:23.000Z",
+          "uid": "35240-b69eccfc-bb76-4943-826d-2cc842d313d3"
+        }
+      ],
+      "id": "41d49918-5954-4396-851e-89ea6907ff65",
+      "createdAt": "2026-07-28T01:22:23.000Z",
+      "updatedAt": "2026-07-28T01:22:23.000Z",
+      "uid": "35240-41d49918-5954-4396-851e-89ea6907ff65"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

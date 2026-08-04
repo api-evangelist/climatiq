@@ -1,0 +1,138 @@
+{
+  "info": {
+    "_postman_id": "fb447388-fb99-47e0-bbbf-0e5f3e6d3452",
+    "name": "Climatiq Autopilot API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:20.000Z",
+    "updatedAt": "2026-07-28T01:22:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fb447388-fb99-47e0-bbbf-0e5f3e6d3452"
+  },
+  "item": [
+    {
+      "name": "autopilot",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "Calculate emissions automatically with Autopilot",
+              "id": "3d3be445-2b2f-4426-83d6-5f6efeaefaeb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/autopilot/v1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "autopilot",
+                    "v1"
+                  ]
+                },
+                "description": "Uses Climatiq's NLP model to interpret a free-text description and automatically select an emission factor and method."
+              },
+              "response": [
+                {
+                  "id": "df194aa6-ab9e-4099-8c45-c13c116c672b",
+                  "name": "Autopilot emission estimate.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/autopilot/v1",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "autopilot",
+                        "v1"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:22:21.000Z",
+                  "updatedAt": "2026-07-28T01:22:21.000Z",
+                  "uid": "35240-df194aa6-ab9e-4099-8c45-c13c116c672b"
+                }
+              ],
+              "createdAt": "2026-07-28T01:22:21.000Z",
+              "updatedAt": "2026-07-28T01:22:21.000Z",
+              "uid": "35240-3d3be445-2b2f-4426-83d6-5f6efeaefaeb"
+            }
+          ],
+          "id": "f666ac5c-9445-4b8c-8c87-dc878c642e12",
+          "createdAt": "2026-07-28T01:22:21.000Z",
+          "updatedAt": "2026-07-28T01:22:21.000Z",
+          "uid": "35240-f666ac5c-9445-4b8c-8c87-dc878c642e12"
+        }
+      ],
+      "id": "e0875775-1b4e-4347-a975-77ac817a93cf",
+      "createdAt": "2026-07-28T01:22:21.000Z",
+      "updatedAt": "2026-07-28T01:22:21.000Z",
+      "uid": "35240-e0875775-1b4e-4347-a975-77ac817a93cf"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

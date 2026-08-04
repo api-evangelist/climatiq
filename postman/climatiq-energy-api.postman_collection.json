@@ -1,0 +1,351 @@
+{
+  "info": {
+    "_postman_id": "86620490-c7b4-4f87-8fa9-2206776348ea",
+    "name": "Climatiq Autopilot Energy API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:23.000Z",
+    "updatedAt": "2026-07-28T01:22:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-86620490-c7b4-4f87-8fa9-2206776348ea"
+  },
+  "item": [
+    {
+      "name": "energy",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "electricity",
+              "item": [
+                {
+                  "name": "Estimate electricity emissions",
+                  "id": "fddb9917-633d-4254-9c68-4f9a43436d64",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/energy/v1/electricity",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "energy",
+                        "v1",
+                        "electricity"
+                      ]
+                    },
+                    "description": "Calculates Scope 2 electricity emissions for a given region and amount of energy consumed, with optional location-based and market-based methods."
+                  },
+                  "response": [
+                    {
+                      "id": "e81e1a5b-d821-49ff-9a0e-48f616fa25d7",
+                      "name": "Electricity emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/energy/v1/electricity",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "energy",
+                            "v1",
+                            "electricity"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:24.000Z",
+                      "updatedAt": "2026-07-28T01:22:24.000Z",
+                      "uid": "35240-e81e1a5b-d821-49ff-9a0e-48f616fa25d7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:24.000Z",
+                  "updatedAt": "2026-07-28T01:22:24.000Z",
+                  "uid": "35240-fddb9917-633d-4254-9c68-4f9a43436d64"
+                }
+              ],
+              "id": "5463dcde-6f57-4fe2-933a-e09aec1cdd6f",
+              "createdAt": "2026-07-28T01:22:24.000Z",
+              "updatedAt": "2026-07-28T01:22:24.000Z",
+              "uid": "35240-5463dcde-6f57-4fe2-933a-e09aec1cdd6f"
+            },
+            {
+              "name": "heat-and-steam",
+              "item": [
+                {
+                  "name": "Estimate heat and steam emissions",
+                  "id": "162635d5-8645-4694-a76b-71e00922e39d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/energy/v1/heat-and-steam",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "energy",
+                        "v1",
+                        "heat-and-steam"
+                      ]
+                    },
+                    "description": "Calculates emissions from purchased heat or steam using region-appropriate factors."
+                  },
+                  "response": [
+                    {
+                      "id": "de5ce248-2f33-43ab-8526-0ac939ddd3d9",
+                      "name": "Heat and steam emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/energy/v1/heat-and-steam",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "energy",
+                            "v1",
+                            "heat-and-steam"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:24.000Z",
+                      "updatedAt": "2026-07-28T01:22:24.000Z",
+                      "uid": "35240-de5ce248-2f33-43ab-8526-0ac939ddd3d9"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:24.000Z",
+                  "updatedAt": "2026-07-28T01:22:24.000Z",
+                  "uid": "35240-162635d5-8645-4694-a76b-71e00922e39d"
+                }
+              ],
+              "id": "1b3e1727-b865-4434-9877-d271b57551b2",
+              "createdAt": "2026-07-28T01:22:24.000Z",
+              "updatedAt": "2026-07-28T01:22:24.000Z",
+              "uid": "35240-1b3e1727-b865-4434-9877-d271b57551b2"
+            },
+            {
+              "name": "fuel",
+              "item": [
+                {
+                  "name": "Estimate fuel combustion emissions",
+                  "id": "6e34cd40-7159-4e18-8b6e-607a860a05c4",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/energy/v1/fuel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "energy",
+                        "v1",
+                        "fuel"
+                      ]
+                    },
+                    "description": "Calculates Scope 1 emissions for combustion of liquid, gaseous, and solid fuels."
+                  },
+                  "response": [
+                    {
+                      "id": "590cc4c0-cc78-4602-aa0e-0903bb64f7db",
+                      "name": "Fuel emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/energy/v1/fuel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "energy",
+                            "v1",
+                            "fuel"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:24.000Z",
+                      "updatedAt": "2026-07-28T01:22:24.000Z",
+                      "uid": "35240-590cc4c0-cc78-4602-aa0e-0903bb64f7db"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:24.000Z",
+                  "updatedAt": "2026-07-28T01:22:24.000Z",
+                  "uid": "35240-6e34cd40-7159-4e18-8b6e-607a860a05c4"
+                }
+              ],
+              "id": "670d7e12-2efa-49ed-b505-242d7a4b8df9",
+              "createdAt": "2026-07-28T01:22:24.000Z",
+              "updatedAt": "2026-07-28T01:22:24.000Z",
+              "uid": "35240-670d7e12-2efa-49ed-b505-242d7a4b8df9"
+            }
+          ],
+          "id": "633f8f37-cb18-498a-a25c-99783cf4d0d5",
+          "createdAt": "2026-07-28T01:22:24.000Z",
+          "updatedAt": "2026-07-28T01:22:24.000Z",
+          "uid": "35240-633f8f37-cb18-498a-a25c-99783cf4d0d5"
+        }
+      ],
+      "id": "99db453b-91d5-4ae2-ba5a-465a658aa4ee",
+      "createdAt": "2026-07-28T01:22:24.000Z",
+      "updatedAt": "2026-07-28T01:22:24.000Z",
+      "uid": "35240-99db453b-91d5-4ae2-ba5a-465a658aa4ee"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

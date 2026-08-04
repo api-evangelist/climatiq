@@ -1,0 +1,192 @@
+{
+  "info": {
+    "_postman_id": "f2f48907-be0a-4e6d-a3df-c6068a5c4abd",
+    "name": "Climatiq Autopilot Reference API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:28.000Z",
+    "updatedAt": "2026-07-28T01:22:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f2f48907-be0a-4e6d-a3df-c6068a5c4abd"
+  },
+  "item": [
+    {
+      "name": "data",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "regions",
+              "item": [
+                {
+                  "name": "List supported regions",
+                  "id": "9f53b49f-461c-485a-ab14-d309f87d26b8",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/data/v1/regions",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "data",
+                        "v1",
+                        "regions"
+                      ]
+                    },
+                    "description": "Returns the geographic regions Climatiq supports for region-specific emission factors."
+                  },
+                  "response": [
+                    {
+                      "id": "aa74ddfd-d314-4e73-ae27-dd43683fe6b9",
+                      "name": "Supported regions.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/data/v1/regions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "data",
+                            "v1",
+                            "regions"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:28.000Z",
+                      "updatedAt": "2026-07-28T01:22:28.000Z",
+                      "uid": "35240-aa74ddfd-d314-4e73-ae27-dd43683fe6b9"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:28.000Z",
+                  "updatedAt": "2026-07-28T01:22:28.000Z",
+                  "uid": "35240-9f53b49f-461c-485a-ab14-d309f87d26b8"
+                }
+              ],
+              "id": "16bfd471-2cd9-4ca4-a562-c4491f25b660",
+              "createdAt": "2026-07-28T01:22:28.000Z",
+              "updatedAt": "2026-07-28T01:22:28.000Z",
+              "uid": "35240-16bfd471-2cd9-4ca4-a562-c4491f25b660"
+            },
+            {
+              "name": "unit-types",
+              "item": [
+                {
+                  "name": "List supported unit types",
+                  "id": "a9ad470e-2c0f-40f8-a94c-8c7853763217",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/data/v1/unit-types",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "data",
+                        "v1",
+                        "unit-types"
+                      ]
+                    },
+                    "description": "Returns the unit types accepted by estimation endpoints (energy, distance, weight, money, etc.)."
+                  },
+                  "response": [
+                    {
+                      "id": "ddafbe90-d573-4a0d-a3f7-7d4e7ac36631",
+                      "name": "Supported unit types.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/data/v1/unit-types",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "data",
+                            "v1",
+                            "unit-types"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:28.000Z",
+                      "updatedAt": "2026-07-28T01:22:28.000Z",
+                      "uid": "35240-ddafbe90-d573-4a0d-a3f7-7d4e7ac36631"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:28.000Z",
+                  "updatedAt": "2026-07-28T01:22:28.000Z",
+                  "uid": "35240-a9ad470e-2c0f-40f8-a94c-8c7853763217"
+                }
+              ],
+              "id": "d5f4a5a0-3691-4a7b-9e91-6473b1c11e94",
+              "createdAt": "2026-07-28T01:22:28.000Z",
+              "updatedAt": "2026-07-28T01:22:28.000Z",
+              "uid": "35240-d5f4a5a0-3691-4a7b-9e91-6473b1c11e94"
+            }
+          ],
+          "id": "829ba8af-1c85-41bf-9e31-048a97357567",
+          "createdAt": "2026-07-28T01:22:28.000Z",
+          "updatedAt": "2026-07-28T01:22:28.000Z",
+          "uid": "35240-829ba8af-1c85-41bf-9e31-048a97357567"
+        }
+      ],
+      "id": "14f78183-5188-4f7d-a688-e9fea9e59a44",
+      "createdAt": "2026-07-28T01:22:28.000Z",
+      "updatedAt": "2026-07-28T01:22:28.000Z",
+      "uid": "35240-14f78183-5188-4f7d-a688-e9fea9e59a44"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

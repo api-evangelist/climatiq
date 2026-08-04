@@ -1,0 +1,34 @@
+{
+  "provider": "climatiq",
+  "sources": [
+    "climatiq-autopilot-api-openapi.yml",
+    "climatiq-cbam-api-openapi.yml",
+    "climatiq-classifications-api-openapi.yml",
+    "climatiq-computing-api-openapi.yml",
+    "climatiq-energy-api-openapi.yml",
+    "climatiq-estimate-api-openapi.yml",
+    "climatiq-freight-api-openapi.yml",
+    "climatiq-procurement-api-openapi.yml",
+    "climatiq-reference-api-openapi.yml",
+    "climatiq-search-api-openapi.yml",
+    "climatiq-travel-api-openapi.yml"
+  ],
+  "outputs": [
+    "climatiq-autopilot-api-openapi.yml",
+    "climatiq-cbam-api-openapi.yml",
+    "climatiq-classifications-api-openapi.yml",
+    "climatiq-computing-api-openapi.yml",
+    "climatiq-energy-api-openapi.yml",
+    "climatiq-estimate-api-openapi.yml",
+    "climatiq-freight-api-openapi.yml",
+    "climatiq-procurement-api-openapi.yml",
+    "climatiq-reference-api-openapi.yml",
+    "climatiq-search-api-openapi.yml",
+    "climatiq-travel-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

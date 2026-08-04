@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "be1db894-b002-4d48-8843-eea2404cbb64",
+    "name": "Climatiq Autopilot Estimate API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:24.000Z",
+    "updatedAt": "2026-07-28T01:22:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-be1db894-b002-4d48-8843-eea2404cbb64"
+  },
+  "item": [
+    {
+      "name": "data",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "estimate",
+              "item": [
+                {
+                  "name": "Estimate emissions for an activity",
+                  "id": "28c7b95b-5f87-496b-aca1-8ec680e968ae",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"emission_factor\": {\n    \"activity_id\": \"<string>\",\n    \"data_version\": \"<string>\",\n    \"region\": \"<string>\",\n    \"year\": \"<integer>\",\n    \"source\": \"<string>\"\n  },\n  \"parameters\": {\n    \"dolor3\": -21208728.899559677\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/data/v1/estimate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "data",
+                        "v1",
+                        "estimate"
+                      ]
+                    },
+                    "description": "Calculates CO2e emissions by combining a selected emission factor (via activity_id or emission_factor object) with caller-supplied activity parameters such as energy used, distance, money spent, or weight moved."
+                  },
+                  "response": [
+                    {
+                      "id": "da995da1-2fb5-40c8-81d8-ef4903f3f716",
+                      "name": "Calculated emission estimate.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"emission_factor\": {\n    \"activity_id\": \"<string>\",\n    \"data_version\": \"<string>\",\n    \"region\": \"<string>\",\n    \"year\": \"<integer>\",\n    \"source\": \"<string>\"\n  },\n  \"parameters\": {\n    \"dolor3\": -21208728.899559677\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/data/v1/estimate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "data",
+                            "v1",
+                            "estimate"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"co2e\": \"<number>\",\n  \"co2e_unit\": \"<string>\",\n  \"co2e_calculation_method\": \"<string>\",\n  \"co2e_calculation_origin\": \"<string>\",\n  \"emission_factor\": {},\n  \"constituent_gases\": {\n    \"co2\": \"<number>\",\n    \"ch4\": \"<number>\",\n    \"n2o\": \"<number>\"\n  },\n  \"activity_data\": {}\n}",
+                      "createdAt": "2026-07-28T01:22:25.000Z",
+                      "updatedAt": "2026-07-28T01:22:25.000Z",
+                      "uid": "35240-da995da1-2fb5-40c8-81d8-ef4903f3f716"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:25.000Z",
+                  "updatedAt": "2026-07-28T01:22:25.000Z",
+                  "uid": "35240-28c7b95b-5f87-496b-aca1-8ec680e968ae"
+                }
+              ],
+              "id": "79f3b30b-fee5-4e25-b527-153cf032ea0b",
+              "createdAt": "2026-07-28T01:22:25.000Z",
+              "updatedAt": "2026-07-28T01:22:25.000Z",
+              "uid": "35240-79f3b30b-fee5-4e25-b527-153cf032ea0b"
+            }
+          ],
+          "id": "3e5ff220-a2be-45c9-aa5c-20b0029a84d7",
+          "createdAt": "2026-07-28T01:22:25.000Z",
+          "updatedAt": "2026-07-28T01:22:25.000Z",
+          "uid": "35240-3e5ff220-a2be-45c9-aa5c-20b0029a84d7"
+        }
+      ],
+      "id": "a7da7eb2-f9bf-478d-98d3-fac330d83c5d",
+      "createdAt": "2026-07-28T01:22:25.000Z",
+      "updatedAt": "2026-07-28T01:22:25.000Z",
+      "uid": "35240-a7da7eb2-f9bf-478d-98d3-fac330d83c5d"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

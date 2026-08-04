@@ -1,0 +1,180 @@
+{
+  "info": {
+    "_postman_id": "cc6fc8b3-6fae-4b7c-a76f-c11b16c83f3a",
+    "name": "Climatiq Autopilot Search API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:28.000Z",
+    "updatedAt": "2026-07-28T01:22:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cc6fc8b3-6fae-4b7c-a76f-c11b16c83f3a"
+  },
+  "item": [
+    {
+      "name": "data",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "search",
+              "item": [
+                {
+                  "name": "Search emission factors",
+                  "id": "39ae1269-53a2-4a55-a5d1-445671dcde15",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/data/v1/search?query=<string>&data_version=<string>&region=<string>&year=<integer>&source=<string>&page=1&results_per_page=10",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "data",
+                        "v1",
+                        "search"
+                      ],
+                      "query": [
+                        {
+                          "key": "query",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "data_version",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "region",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "year",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "source",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "results_per_page",
+                          "value": "10"
+                        }
+                      ]
+                    },
+                    "description": "Returns a paginated list of emission factors matching the given query, region, year, source, sector, and other filter parameters. Used to discover the activity_id needed for estimation calls."
+                  },
+                  "response": [
+                    {
+                      "id": "71c3d169-3447-4880-8ad8-654bbc7ec1d3",
+                      "name": "Matching emission factors.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/data/v1/search?query=<string>&data_version=<string>&region=<string>&year=<integer>&source=<string>&page=1&results_per_page=10",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "data",
+                            "v1",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "key": "query",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "data_version",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "region",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "year",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "source",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "page",
+                              "value": "1"
+                            },
+                            {
+                              "key": "results_per_page",
+                              "value": "10"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:29.000Z",
+                      "updatedAt": "2026-07-28T01:22:29.000Z",
+                      "uid": "35240-71c3d169-3447-4880-8ad8-654bbc7ec1d3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:29.000Z",
+                  "updatedAt": "2026-07-28T01:22:29.000Z",
+                  "uid": "35240-39ae1269-53a2-4a55-a5d1-445671dcde15"
+                }
+              ],
+              "id": "6b13f4e0-2349-4cc8-85fe-73f825f25152",
+              "createdAt": "2026-07-28T01:22:29.000Z",
+              "updatedAt": "2026-07-28T01:22:29.000Z",
+              "uid": "35240-6b13f4e0-2349-4cc8-85fe-73f825f25152"
+            }
+          ],
+          "id": "d5da9bf7-791d-4d52-913a-3580f33f4a30",
+          "createdAt": "2026-07-28T01:22:29.000Z",
+          "updatedAt": "2026-07-28T01:22:29.000Z",
+          "uid": "35240-d5da9bf7-791d-4d52-913a-3580f33f4a30"
+        }
+      ],
+      "id": "db1086d8-c2f0-4286-bce4-33b99ff228f4",
+      "createdAt": "2026-07-28T01:22:29.000Z",
+      "updatedAt": "2026-07-28T01:22:29.000Z",
+      "uid": "35240-db1086d8-c2f0-4286-bce4-33b99ff228f4"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}

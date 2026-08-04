@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "67f9aa9d-d767-41c5-a32c-0185dd75a5f7",
+    "name": "Climatiq Autopilot Freight API",
+    "description": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:22:26.000Z",
+    "updatedAt": "2026-07-28T01:22:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-67f9aa9d-d767-41c5-a32c-0185dd75a5f7"
+  },
+  "item": [
+    {
+      "name": "freight",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "intermodal",
+              "item": [
+                {
+                  "name": "Estimate intermodal freight emissions",
+                  "id": "ccce5433-f1f5-4712-a0d8-76d5d4f8c178",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/freight/v3/intermodal",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "freight",
+                        "v3",
+                        "intermodal"
+                      ]
+                    },
+                    "description": "Calculates well-to-wheel freight emissions across multi-leg journeys using GLEC factors for sea, air, road, and rail."
+                  },
+                  "response": [
+                    {
+                      "id": "6fb0bb09-1afb-4056-9dc1-05e319fac887",
+                      "name": "Freight emissions per leg and total.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/freight/v3/intermodal",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "freight",
+                            "v3",
+                            "intermodal"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:22:26.000Z",
+                      "updatedAt": "2026-07-28T01:22:26.000Z",
+                      "uid": "35240-6fb0bb09-1afb-4056-9dc1-05e319fac887"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:22:26.000Z",
+                  "updatedAt": "2026-07-28T01:22:26.000Z",
+                  "uid": "35240-ccce5433-f1f5-4712-a0d8-76d5d4f8c178"
+                }
+              ],
+              "id": "4636273a-ce6c-4e66-bcb7-9810718250ad",
+              "createdAt": "2026-07-28T01:22:26.000Z",
+              "updatedAt": "2026-07-28T01:22:26.000Z",
+              "uid": "35240-4636273a-ce6c-4e66-bcb7-9810718250ad"
+            }
+          ],
+          "id": "295554dc-fe91-4d27-9407-ffb0ba446506",
+          "createdAt": "2026-07-28T01:22:26.000Z",
+          "updatedAt": "2026-07-28T01:22:26.000Z",
+          "uid": "35240-295554dc-fe91-4d27-9407-ffb0ba446506"
+        }
+      ],
+      "id": "b26ddc16-2fef-47bb-a885-a18bd5b8a398",
+      "createdAt": "2026-07-28T01:22:26.000Z",
+      "updatedAt": "2026-07-28T01:22:26.000Z",
+      "uid": "35240-b26ddc16-2fef-47bb-a885-a18bd5b8a398"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.climatiq.io"
+    }
+  ]
+}
