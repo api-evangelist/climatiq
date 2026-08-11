@@ -498,7 +498,7 @@ common:
   - type: Versioning
     url: https://www.climatiq.io/docs/changelogs/api-release
   - type: OpenAPI
-    url: openapi/climatiq-openapi.yml
+    url: openapi/_original/climatiq-openapi.yml
   - type: JSONSchema
     url: json-schema/climatiq-emission-estimate-schema.json
   - type: JSONLDContext
