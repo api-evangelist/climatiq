@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot Classifications API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Classifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List supported industry classifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.climatiq.io/classifications/v2"
+          },
+          "docs": "Returns the list of supported industry-classification systems and how they map to Climatiq emission factors."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

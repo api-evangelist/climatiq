@@ -1,0 +1,134 @@
+{
+  "item": [
+    {
+      "id": "51fc7316-8888-4820-94bf-64cf82d1c507",
+      "name": "CBAM",
+      "description": {
+        "content": "EU Carbon Border Adjustment Mechanism reporting.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d8a2530-7b58-4add-a489-4134e1a7ce70",
+          "name": "Estimate CBAM embedded emissions",
+          "request": {
+            "name": "Estimate CBAM embedded emissions",
+            "description": {
+              "content": "Calculates embedded emissions for goods covered by the EU Carbon Border Adjustment Mechanism.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cbam",
+                "v1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8251240-11dd-415d-89a4-4c890f96bc38",
+              "name": "CBAM emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cbam",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.climatiq.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d516227a-4dc4-418f-ac2d-daba0c01c822",
+    "name": "Climatiq Autopilot CBAM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+      "type": "text/plain"
+    }
+  }
+}

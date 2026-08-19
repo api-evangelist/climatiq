@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot Estimate API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Estimate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate emissions for an activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/data/v1/estimate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates CO2e emissions by combining a selected emission factor (via activity_id or emission_factor object) with caller-supplied activity parameters such as energy used, distance, money spent, or weight moved."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

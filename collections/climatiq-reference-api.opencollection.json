@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot Reference API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reference",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List supported regions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.climatiq.io/data/v1/regions"
+          },
+          "docs": "Returns the geographic regions Climatiq supports for region-specific emission factors."
+        },
+        {
+          "info": {
+            "name": "List supported unit types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.climatiq.io/data/v1/unit-types"
+          },
+          "docs": "Returns the unit types accepted by estimation endpoints (energy, distance, weight, money, etc.)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

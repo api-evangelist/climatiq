@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot Freight API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Freight",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate intermodal freight emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/freight/v3/intermodal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates well-to-wheel freight emissions across multi-leg journeys using GLEC factors for sea, air, road, and rail."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

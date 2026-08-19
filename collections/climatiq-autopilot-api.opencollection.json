@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Autopilot",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Calculate emissions automatically with Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/autopilot/v1",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Uses Climatiq's NLP model to interpret a free-text description and automatically select an emission factor and method."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot Travel API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Travel",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate car travel emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/travel/v1/car",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions for passenger car travel based on distance and vehicle parameters."
+        },
+        {
+          "info": {
+            "name": "Estimate flight emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/travel/v1/flight",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates passenger flight emissions for one or more legs using IATA airport codes and class of travel."
+        },
+        {
+          "info": {
+            "name": "Estimate hotel stay emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/travel/v1/hotel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions associated with hotel accommodation by country, number of nights, and number of rooms."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

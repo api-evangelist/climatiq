@@ -1,0 +1,134 @@
+{
+  "item": [
+    {
+      "id": "169cce3f-48ef-44ec-a0b1-49c1d2ea93da",
+      "name": "Autopilot",
+      "description": {
+        "content": "AI-driven automated emissions calculation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8782ed3a-05da-48f1-9f6a-cd833024e504",
+          "name": "Calculate emissions automatically with Autopilot",
+          "request": {
+            "name": "Calculate emissions automatically with Autopilot",
+            "description": {
+              "content": "Uses Climatiq's NLP model to interpret a free-text description and automatically select an emission factor and method.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "v1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ee0d5599-9682-4298-863e-bed3ba497763",
+              "name": "Autopilot emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.climatiq.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "71458629-1f21-4432-a94e-a289cd28aad2",
+    "name": "Climatiq Autopilot API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+      "type": "text/plain"
+    }
+  }
+}

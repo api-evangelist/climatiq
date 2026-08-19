@@ -1,0 +1,326 @@
+{
+  "item": [
+    {
+      "id": "7a8c06fa-e5a6-4152-8c58-94d4b89c8ec6",
+      "name": "Energy",
+      "description": {
+        "content": "Emissions from electricity, heat, and fuel consumption.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c81736d-c029-4494-a0c6-ab76c1150247",
+          "name": "Estimate electricity emissions",
+          "request": {
+            "name": "Estimate electricity emissions",
+            "description": {
+              "content": "Calculates Scope 2 electricity emissions for a given region and amount of energy consumed, with optional location-based and market-based methods.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "energy",
+                "v1",
+                "electricity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95943807-30f0-4726-ad5c-68b1ac7621f4",
+              "name": "Electricity emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "energy",
+                    "v1",
+                    "electricity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c295eb76-14a0-4863-981f-581b5c172298",
+          "name": "Estimate heat and steam emissions",
+          "request": {
+            "name": "Estimate heat and steam emissions",
+            "description": {
+              "content": "Calculates emissions from purchased heat or steam using region-appropriate factors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "energy",
+                "v1",
+                "heat-and-steam"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "949a6c7f-778b-405b-a04f-c63e4c03d3c3",
+              "name": "Heat and steam emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "energy",
+                    "v1",
+                    "heat-and-steam"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb7d0285-cbed-4a86-80f2-abcde72045b5",
+          "name": "Estimate fuel combustion emissions",
+          "request": {
+            "name": "Estimate fuel combustion emissions",
+            "description": {
+              "content": "Calculates Scope 1 emissions for combustion of liquid, gaseous, and solid fuels.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "energy",
+                "v1",
+                "fuel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "02e88917-27d4-4811-a037-5f6b78d7d062",
+              "name": "Fuel emission estimate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "energy",
+                    "v1",
+                    "fuel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.climatiq.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "63a86ace-7f53-4ea5-b01b-0498686972b6",
+    "name": "Climatiq Autopilot Energy API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+      "type": "text/plain"
+    }
+  }
+}

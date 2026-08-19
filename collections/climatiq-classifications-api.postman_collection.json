@@ -1,0 +1,111 @@
+{
+  "item": [
+    {
+      "id": "67ff126e-f866-41b3-ba80-cc2f10b8a293",
+      "name": "Classifications",
+      "description": {
+        "content": "Industry classification mappings for emission factors.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b06a1af8-8c1c-4420-b740-9fae48ae686a",
+          "name": "List supported industry classifications",
+          "request": {
+            "name": "List supported industry classifications",
+            "description": {
+              "content": "Returns the list of supported industry-classification systems and how they map to Climatiq emission factors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "classifications",
+                "v2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1dc8790c-1a16-4e47-b41e-9343cdaff5cf",
+              "name": "Available classification systems.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "classifications",
+                    "v2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.climatiq.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1a272f92-379b-433e-91fb-38eeea65592e",
+    "name": "Climatiq Autopilot Classifications API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Climatiq is a carbon emissions calculation API that gives developers programmatic access to a curated database of emission factors and to purpose-built calculation endpoints. The API exposes search over the factor catalog and a family of estimation endpoints for activity-based and spend-based calculations across travel, freight, energy, cloud computing, procurement, and CBAM workflows. Authentication uses an API key sent as a Bearer token in the Authorization header. Responses are JSON with deterministic emission outputs in CO2e (kg) plus the underlying factor metadata.\n\nContact Support:\n Name: Climatiq Support",
+      "type": "text/plain"
+    }
+  }
+}

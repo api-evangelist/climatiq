@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot CBAM API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CBAM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate CBAM embedded emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/cbam/v1",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates embedded emissions for goods covered by the EU Carbon Border Adjustment Mechanism."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

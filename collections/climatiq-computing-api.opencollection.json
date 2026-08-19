@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Climatiq Autopilot Computing API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Computing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Estimate cloud CPU emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/compute/v1/cpu",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates the CO2e of CPU usage on a cloud provider, automatically selecting region-specific grid factors."
+        },
+        {
+          "info": {
+            "name": "Estimate cloud memory emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/compute/v1/memory",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions from RAM usage on a cloud provider in a specified region."
+        },
+        {
+          "info": {
+            "name": "Estimate cloud storage emissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.climatiq.io/compute/v1/storage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculates emissions from object or block storage on a cloud provider in a specified region."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
