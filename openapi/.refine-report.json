@@ -1,17 +1,7 @@
 {
   "provider": "climatiq",
   "sources": [
-    "climatiq-autopilot-api-openapi.yml",
-    "climatiq-cbam-api-openapi.yml",
-    "climatiq-classifications-api-openapi.yml",
-    "climatiq-computing-api-openapi.yml",
-    "climatiq-energy-api-openapi.yml",
-    "climatiq-estimate-api-openapi.yml",
-    "climatiq-freight-api-openapi.yml",
-    "climatiq-procurement-api-openapi.yml",
-    "climatiq-reference-api-openapi.yml",
-    "climatiq-search-api-openapi.yml",
-    "climatiq-travel-api-openapi.yml"
+    "_original/climatiq-openapi.yml"
   ],
   "outputs": [
     "climatiq-autopilot-api-openapi.yml",
@@ -29,6 +19,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "climatiq-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "climatiq-autopilot-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-cbam-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-classifications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-computing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-energy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-estimate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-freight-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-procurement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-reference-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "climatiq-travel-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
