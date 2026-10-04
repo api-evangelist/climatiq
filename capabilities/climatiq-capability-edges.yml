@@ -1,0 +1,91 @@
+slug: climatiq
+provider: Climatiq
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 8
+edges:
+- tag: Estimate
+  spec_file: climatiq-estimate-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.9
+  evidence: POST /data/v1/estimate  estimateEmissions  Estimate emissions for an activity; "carbon emissions
+    calculation API ... curated database of emission factors"
+  reason: Generic activity-based CO2e estimation is carbon footprint computation, squarely Climate & Carbon
+    Management within Sustainability.
+- tag: Autopilot
+  spec_file: climatiq-autopilot-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.88
+  evidence: POST /autopilot/v1  autopilotEstimate  Calculate emissions automatically with Autopilot
+  reason: Operation computes CO2e estimates from activity/spend data against an emission-factor database
+    — carbon footprint calculation, i.e. Climate & Carbon Management.
+- tag: Energy
+  spec_file: climatiq-energy-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.88
+  evidence: POST /energy/v1/electricity  estimateElectricity  Estimate electricity emissions; POST /energy/v1/fuel  estimateFuel  Estimate
+    fuel combustion emissions
+  reason: Scope 1/2 style emissions calculation for electricity, heat/steam and fuel combustion — direct
+    carbon footprint quantification under Climate & Carbon Management.
+- tag: Travel
+  spec_file: climatiq-travel-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.88
+  evidence: estimateTravelFlight  Estimate flight emissions; estimateTravelHotel  Estimate hotel stay
+    emissions
+  reason: Operations compute travel-related emissions, i.e. carbon footprint calculation, not travel booking
+    or expense management.
+- tag: Computing
+  spec_file: climatiq-computing-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.85
+  evidence: POST /compute/v1/cpu  estimateCloudCpu  Estimate cloud CPU emissions
+  reason: Estimates CO2e from cloud compute, memory and storage usage — carbon footprinting of IT workloads,
+    which realises Climate & Carbon Management rather than IT infrastructure management.
+- tag: Freight
+  spec_file: climatiq-freight-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.85
+  evidence: POST /freight/v3/intermodal  estimateFreightIntermodal  Estimate intermodal freight emissions
+  reason: Despite the logistics-sounding tag, the single operation computes freight emissions, i.e. carbon
+    footprinting, not transport execution.
+- tag: Procurement
+  spec_file: climatiq-procurement-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.8
+  evidence: POST /procurement/v1/spend  estimateProcurementSpend  Estimate spend-based procurement emissions
+  reason: 'Homograph: tag reads as Procurement but the operation is spend-based emissions estimation (Scope
+    3 carbon accounting), not sourcing or purchasing.'
+- tag: CBAM
+  spec_file: climatiq-cbam-api-openapi.yml
+  capability_id: BC-740.20
+  capability_id_l1: BC-740
+  capability_name: Climate & Carbon Management
+  confidence: 0.75
+  evidence: POST /cbam/v1  estimateCbam  Estimate CBAM embedded emissions
+  reason: Computes embedded emissions for the Carbon Border Adjustment Mechanism — emissions quantification
+    for a climate regulation. Carbon management fits best; a secondary indirect-tax/customs reading exists,
+    so confidence is moderate.

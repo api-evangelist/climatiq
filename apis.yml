@@ -470,6 +470,9 @@ apis:
   - type: ChangeLog
     url: https://www.climatiq.io/docs/changelogs/api-release
 common:
+  - type: CapabilityMap
+    url: capabilities/climatiq-capability-edges.yml
+    name: Climatiq Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/climatiq/overview
   - type: AgenticAccess
