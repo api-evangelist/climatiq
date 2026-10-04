@@ -40,28 +40,6 @@ paths:
                 $ref: '#/components/schemas/EstimationResponse'
 components:
   schemas:
-    EstimationRequest:
-      type: object
-      required:
-      - emission_factor
-      - parameters
-      properties:
-        emission_factor:
-          type: object
-          properties:
-            activity_id:
-              type: string
-            data_version:
-              type: string
-            region:
-              type: string
-            year:
-              type: integer
-            source:
-              type: string
-        parameters:
-          type: object
-          additionalProperties: true
     EstimationResponse:
       type: object
       properties:
@@ -87,6 +65,28 @@ components:
               type: number
         activity_data:
           type: object
+    EstimationRequest:
+      type: object
+      required:
+      - emission_factor
+      - parameters
+      properties:
+        emission_factor:
+          type: object
+          properties:
+            activity_id:
+              type: string
+            data_version:
+              type: string
+            region:
+              type: string
+            year:
+              type: integer
+            source:
+              type: string
+        parameters:
+          type: object
+          additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http
