@@ -470,6 +470,12 @@ apis:
   - type: ChangeLog
     url: https://www.climatiq.io/docs/changelogs/api-release
 common:
+  - type: Plans
+    url: plans/climatiq-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/climatiq-rate-limits.yml
+  - type: FinOps
+    url: finops/climatiq-finops.yml
   - type: CapabilityMap
     url: capabilities/climatiq-capability-edges.yml
     name: Climatiq Business Capability Map
