@@ -15,3 +15,33 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: climatiq-lf-energy-membership-landscape
+  label: LF Energy (membership / landscape)
+  partner: lf-energy
+  partner_name: LF Energy (membership / landscape)
+  category: LF Energy landscape listing
+  type: register
+  channel: standard-directory
+  evidence: https://github.com/lf-energy/lfenergy-landscape/blob/1364cff4a6379fe8e87568eb5134fd6e8b4ded8e/landscape.yml
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: LF Energy Landscape (github.com/lf-energy/lfenergy-landscape landscape.yml @1364cff4a6)
+    spec_file: null
+    standard: LF Energy
+    role: landscape-listed
+    registered_name: Open-Emission-Factors-DB
+    registered_names:
+    - Open-Emission-Factors-DB
+    website: https://www.climatiq.io/explorer
+    matched_domain: climatiq.io
+    matched_by: domain
+    landscape_categories:
+    - Emissions / Carbon Intensity and Accounting
+    landscape_entries: 1
+    signal_note: 'participation only: LF Energy membership / a landscape listing is standard-participant evidence,
+      not depth. Tier, entries and categories are CONTEXT, never counted'
+    detected_by: sweep-lf-energy-projects.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
