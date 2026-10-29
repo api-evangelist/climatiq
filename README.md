@@ -1,4 +1,4 @@
-# Climatiq (climatiq)
+# Climatiq
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,89 +66,171 @@
 
 Climatiq provides a developer-first API for carbon accounting and emissions calculations. The platform packages a curated emission-factor database together with calculation endpoints that turn activity or spend data into auditable CO2-equivalent estimates aligned with the GHG Protocol. Capabilities span search across the factor catalog, generic activity-based estimation, and purpose-built endpoints for travel, freight (GLEC), energy, cloud computing, procurement, and the EU Carbon Border Adjustment Mechanism. The API is keyed (Bearer token) and hosted at api.climatiq.io.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/climatiq/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/climatiq/refs/heads/main/apis.yml)
+**Areas:** Carbon Accounting · Carbon Emissions · Climate · Energy · Environment · GHG Protocol · Sustainability
 
-## Scope
+## Climatiq on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Climatiq is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/climatiq/](https://apis.io/providers/climatiq/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (11)
 
-- Carbon Accounting
-- Carbon Emissions
-- Climate
-- Energy
-- Environment
-- GHG Protocol
-- Sustainability
+- [Climatiq Autopilot API](https://apis.io/apis/climatiq/climatiq-autopilot-api/) — AI-driven automated emissions calculation.
+- [Climatiq CBAM API](https://apis.io/apis/climatiq/climatiq-cbam-api/) — EU Carbon Border Adjustment Mechanism reporting.
+- [Climatiq Classifications API](https://apis.io/apis/climatiq/climatiq-classifications-api/) — Industry classification mappings for emission factors.
+- [Climatiq Computing API](https://apis.io/apis/climatiq/climatiq-computing-api/) — Cloud computing carbon footprint.
+- [Climatiq Energy API](https://apis.io/apis/climatiq/climatiq-energy-api/) — Emissions from electricity, heat, and fuel consumption.
+- [Climatiq Estimate API](https://apis.io/apis/climatiq/climatiq-estimate-api/) — Activity-based emission estimation.
+- [Climatiq Freight API](https://apis.io/apis/climatiq/climatiq-freight-api/) — Multi-modal freight emissions using GLEC factors.
+- [Climatiq Procurement API](https://apis.io/apis/climatiq/climatiq-procurement-api/) — Spend-based emissions for purchased goods and services.
+- [Climatiq Reference API](https://apis.io/apis/climatiq/climatiq-reference-api/) — Reference data such as regions and unit types.
+- [Climatiq Search API](https://apis.io/apis/climatiq/climatiq-search-api/) — Discover emission factors in the Climatiq dataset.
+- [Climatiq Travel API](https://apis.io/apis/climatiq/climatiq-travel-api/) — Emissions from passenger travel and accommodation.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-24
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Climatiq API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Climatiq API is a single REST surface at api.climatiq.io that groups search, estimation, and reference operations under a shared API-key (Bearer) auth model. It exposes /data/v1/search for discovering emission factors; /data/v1/estimate for activity-based estimation; family endpoints under /travel, /freight, /energy, /compute, /procurement, /autopilot, /classifications, and /cbam for purpose-built calculations; and reference endpoints for regions and unit types. All endpoints return CO2e in kilograms together with the underlying factor and gas breakdown.
+- [Climatiq Agentic Access](https://apis.io/agentic-access/climatiq/climatiq-agentic-access/)
 
-- **Human URL:** [https://www.climatiq.io/docs/api-reference](https://www.climatiq.io/docs/api-reference)
-- **Base URL:** `https://api.climatiq.io`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Carbon Emissions
-- Emission Factors
-- GHG Protocol
-- Sustainability
+- [Climatiq Emission Estimate](https://apis.io/schemas/climatiq/climatiq-emission-estimate/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://www.climatiq.io/docs/api-reference)
-- [Getting Started](https://www.climatiq.io/docs/guides/tutorials/quickstart)
-- [Reference](https://www.climatiq.io/docs/api-reference/search)
-- [Reference](https://www.climatiq.io/docs/api-reference/estimate)
-- [Reference](https://www.climatiq.io/docs/api-reference/travel)
-- [Reference](https://www.climatiq.io/docs/api-reference/intermodal-freight)
-- [Reference](https://www.climatiq.io/docs/api-reference/energy)
-- [Reference](https://www.climatiq.io/docs/api-reference/computing)
-- [Reference](https://www.climatiq.io/docs/api-reference/procurement)
-- [Reference](https://www.climatiq.io/docs/api-reference/autopilot)
-- [Reference](https://www.climatiq.io/docs/api-reference/classifications)
-- [Reference](https://www.climatiq.io/docs/api-reference/custom-mappings)
-- [Reference](https://www.climatiq.io/docs/api-reference/cbam)
-- [Changelog](https://www.climatiq.io/docs/changelogs/api-release)
-- [OpenAPI](openapi/climatiq-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/climatiq.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/climatiq.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Climatiq Context](https://apis.io/jsonld/climatiq/climatiq-context/)
 
-- [GitHub Organization](https://github.com/climatiq)
-- [LinkedIn](https://www.linkedin.com/company/climatiq)
+#### Collections (23)
+
+Postman and Open Collection request collections.
+
+- [Climatiq API](https://apis.io/collections/climatiq/open-climatiq/)
+- [Climatiq Autopilot API](https://apis.io/collections/climatiq/open-climatiq-autopilot-api/)
+- [Climatiq Autopilot CBAM API](https://apis.io/collections/climatiq/open-climatiq-cbam-api/)
+- [Climatiq Autopilot Classifications API](https://apis.io/collections/climatiq/open-climatiq-classifications-api/)
+- [Climatiq Autopilot Computing API](https://apis.io/collections/climatiq/open-climatiq-computing-api/)
+- [Climatiq Autopilot Energy API](https://apis.io/collections/climatiq/open-climatiq-energy-api/)
+- [Climatiq Autopilot Estimate API](https://apis.io/collections/climatiq/open-climatiq-estimate-api/)
+- [Climatiq Autopilot Freight API](https://apis.io/collections/climatiq/open-climatiq-freight-api/)
+- [Climatiq Autopilot Procurement API](https://apis.io/collections/climatiq/open-climatiq-procurement-api/)
+- [Climatiq Autopilot Reference API](https://apis.io/collections/climatiq/open-climatiq-reference-api/)
+- [Climatiq Autopilot Search API](https://apis.io/collections/climatiq/open-climatiq-search-api/)
+- [Climatiq Autopilot Travel API](https://apis.io/collections/climatiq/open-climatiq-travel-api/)
+- [Climatiq Autopilot API](https://apis.io/collections/climatiq/postman-climatiq-autopilot-api/)
+- [Climatiq Autopilot CBAM API](https://apis.io/collections/climatiq/postman-climatiq-cbam-api/)
+- [Climatiq Autopilot Classifications API](https://apis.io/collections/climatiq/postman-climatiq-classifications-api/)
+- [Climatiq Autopilot Computing API](https://apis.io/collections/climatiq/postman-climatiq-computing-api/)
+- [Climatiq Autopilot Energy API](https://apis.io/collections/climatiq/postman-climatiq-energy-api/)
+- [Climatiq Autopilot Estimate API](https://apis.io/collections/climatiq/postman-climatiq-estimate-api/)
+- [Climatiq Autopilot Freight API](https://apis.io/collections/climatiq/postman-climatiq-freight-api/)
+- [Climatiq Autopilot Procurement API](https://apis.io/collections/climatiq/postman-climatiq-procurement-api/)
+- [Climatiq Autopilot Reference API](https://apis.io/collections/climatiq/postman-climatiq-reference-api/)
+- [Climatiq Autopilot Search API](https://apis.io/collections/climatiq/postman-climatiq-search-api/)
+- [Climatiq Autopilot Travel API](https://apis.io/collections/climatiq/postman-climatiq-travel-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Climatiq — jsonschema rules](https://apis.io/rules/climatiq/climatiq-jsonschema-spectral-rules/)
+- [Climatiq API Rules](https://apis.io/rules/climatiq/climatiq-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Climatiq Authentication](https://apis.io/security/climatiq/climatiq-authentication/)
+- [Climatiq Domain Security](https://apis.io/security/climatiq/climatiq-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Climatiq Plans Pricing](https://apis.io/plans/climatiq/climatiq-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Climatiq Rate Limits](https://apis.io/rate-limits/climatiq/climatiq-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Climatiq Finops](https://apis.io/finops/climatiq/climatiq-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.climatiq.io/)
-- [Portal](https://www.climatiq.io/docs)
 - [Documentation](https://www.climatiq.io/docs/api-reference)
-- [Getting Started](https://www.climatiq.io/docs/guides/tutorials/quickstart)
+- [Getting started](https://www.climatiq.io/docs/guides/tutorials/quickstart)
 - [Pricing](https://www.climatiq.io/pricing)
-- [Blog](https://www.climatiq.io/blog)
-- [Trust](https://trust.climatiq.io/)
 - [Support](https://www.climatiq.io/support)
-- [Customers](https://www.climatiq.io/customers)
-- [Login](https://auth.climatiq.io/login)
-- [Playground](https://www.climatiq.io/demo)
-- [Partners](https://www.climatiq.io/partner-with-climatiq)
-- [Newsletter](https://www.climatiq.io/newsletter)
-- [Versioning](https://www.climatiq.io/docs/changelogs/api-release)
-- [OpenAPI](openapi/climatiq-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/climatiq-emission-estimate-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](json-ld/climatiq-context.jsonld)
-- [Spectral Rules](rules/climatiq-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
+- [Blog](https://www.climatiq.io/blog)
+- [GitHub](https://github.com/climatiq)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 44.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 54.4 |
+| Contract governance | 13.6 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 61.9 |
+| Access clarity | 32.9 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 18.0** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/climatiq/](https://apis.io/providers/climatiq/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Climatiq: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/climatiq/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
